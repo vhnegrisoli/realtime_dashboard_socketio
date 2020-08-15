@@ -69,7 +69,7 @@
                 .forEach(function (value, key) {
                     object[key] = value;
                 });
-            await axios.post('http://localhost:8080/update-data', JSON.stringify(object))
+            await axios.post('http://localhost:8080/novos-dados', JSON.stringify(object))
                 .then(data => {
                     document.location.href = 'http://localhost:8080/dashboard'
                 })
