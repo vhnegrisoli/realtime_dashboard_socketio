@@ -1,5 +1,7 @@
 # Projeto: Dashboard em Real-Time
 
+![](dashboard_demo.gif)
+
 ### Objetivos
 
 Este projeto tem como objetivo colocar em prática meus conhecimentos de desenvolvimento back-end e Node.js 
