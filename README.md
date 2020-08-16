@@ -1,6 +1,6 @@
 # Projeto: Dashboard em Real-Time
 
-![Demonstração da Dashboard](https://media2.giphy.com/media/U49CS2Y16hPAcqy9wn/giphy.gif)
+![Tecnologias](https://uploaddeimagens.com.br/images/002/831/765/original/tecnologias.png?1597539856)
 
 ### Objetivos
 
@@ -17,6 +17,8 @@ Minha motivação foi de juntar meus conhecimentos em desenvolvimento back-end e
 unindo as duas áreas na tentativa de entregar uma ferramenta que corresponde ao objetivo de muitos gestores e 
 tomadores de decisão: saber o que está acontecendo na hora, em tempo real!
 
+![Demonstração da Dashboard](https://im5.ezgif.com/tmp/ezgif-5-74a7fd55d93d.gif)
+
 ### Tecnologias
 
 * Javascript ES6
@@ -26,7 +28,6 @@ tomadores de decisão: saber o que está acontecendo na hora, em tempo real!
 * MongoDB
 * Handlebars
 * Arquitetura de API REST e MVC
-* arqui
 * HTML
 * Materialize CSS
 * Chart.js
@@ -52,7 +53,7 @@ requisições ao back-end através do endpoint: `http://localhost:8080/atualizar
 dispara o envio dos dado no back-end, gera-se um JSON que é emitido pelo Socket.io, e atualiza 
 a dashboard conforme o listener do Socket.io no front-end.
 
-![Demonstração Dashboard API Call](https://media0.giphy.com/media/jUnHcJsbxxqvpOy8Q7/giphy.gif)
+![Demonstração Dashboard API Call](https://im5.ezgif.com/tmp/ezgif-5-0ed27eb99445.gif)
 
 ### Autor
 
