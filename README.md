@@ -17,7 +17,7 @@ Minha motivação foi de juntar meus conhecimentos em desenvolvimento back-end e
 unindo as duas áreas na tentativa de entregar uma ferramenta que corresponde ao objetivo de muitos gestores e 
 tomadores de decisão: saber o que está acontecendo na hora, em tempo real!
 
-![Demonstração da Dashboard](https://im5.ezgif.com/tmp/ezgif-5-74a7fd55d93d.gif)
+![Demonstração da Dashboard](https://github.com/vhnegrisoli/realtime_dashboard_socketio/blob/master/dashboard_demo.gif)
 
 ### Tecnologias
 
@@ -53,7 +53,7 @@ requisições ao back-end através do endpoint: `http://localhost:8080/atualizar
 dispara o envio dos dado no back-end, gera-se um JSON que é emitido pelo Socket.io, e atualiza 
 a dashboard conforme o listener do Socket.io no front-end.
 
-![Demonstração Dashboard API Call](https://im5.ezgif.com/tmp/ezgif-5-0ed27eb99445.gif)
+![Demonstração Dashboard API Call](https://github.com/vhnegrisoli/realtime_dashboard_socketio/blob/master/dashboard_rest_demo.gif)
 
 ### Autor
 
