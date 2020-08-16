@@ -1,6 +1,6 @@
 # Projeto: Dashboard em Real-Time
 
-![](dashboard_demo.gif)
+![Demonstração da Dashboard](https://media2.giphy.com/media/U49CS2Y16hPAcqy9wn/giphy.gif)
 
 ### Objetivos
 
