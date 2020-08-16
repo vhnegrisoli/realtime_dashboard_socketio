@@ -45,6 +45,15 @@ Para executar o projeto, rode o comando:
 
 O projeto estará disponível no endereço: `http://localhost:8080`.
 
+### Demonstração
+
+No GIF abaixo, podemos ver a dashboard atualizando conforme são feitas
+requisições ao back-end através do endpoint: `http://localhost:8080/atualizar-dados` (POST), em que
+dispara o envio dos dado no back-end, gera-se um JSON que é emitido pelo Socket.io, e atualiza 
+a dashboard conforme o listener do Socket.io no front-end.
+
+![Demonstração Dashboard API Call](https://media0.giphy.com/media/jUnHcJsbxxqvpOy8Q7/giphy.gif)
+
 ### Autor
 
 ### Victor Hugo Negrisoli
