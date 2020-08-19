@@ -17,6 +17,7 @@
     "sucrase": "^3.15.0"
   },
   "devDependencies": {
+    "handlebars": "^4.7.6",
     "nodemon": "^2.0.4"
   }
 }
