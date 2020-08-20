@@ -1,6 +1,30 @@
 import * as io from "./../../../config/socket/index";
 
+import Categoria from "../../produto/model/Categoria";
+import Fornecedor from "../../produto/model/Fornecedor";
+import Produto from "../../produto/model/Produto";
+import Venda from "../../venda/model/Venda";
+
 class DashboardController {
+  async inserirDadosIniciais(req, res) {
+    const { vendas, produtos, categorias, fornecedores } = req.body;
+
+    if (!vendas || !produtos || !categorias || !fornecedores) {
+      return res
+        .status(400)
+        .json({ message: "É necessário informar todos os Models" });
+    }
+
+    await Categoria.insertMany(categorias);
+    await Fornecedor.insertMany(fornecedores);
+    await Produto.insertMany(produtos);
+    await Venda.insertMany(vendas);
+
+    return res
+      .status(201)
+      .json({ message: "Todos os dados iniciais foram inseridos!" });
+  }
+
   iniciarDashboard(req, res) {
     return res.render("dashboard", {
       card1: 0,

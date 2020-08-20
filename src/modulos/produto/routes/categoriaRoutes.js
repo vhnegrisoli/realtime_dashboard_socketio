@@ -4,10 +4,10 @@ import CategoriaController from "../controller/CategoriaController";
 
 const router = new Router();
 
-router.get("/categorias", CategoriaController.buscarCategorias);
+router.get("/categorias/listar", CategoriaController.buscarCategorias);
 router.get("/categorias/nova", CategoriaController.iniciarFormularioCategoria);
-router.post("/categorias/salvar", CategoriaController.salvarCategoria);
 
-router.get("/api/categorias", CategoriaController.buscarCategoriasApi);
+router.get("/api/categorias", CategoriaController.buscarTodasCategorias);
+router.post("/api/categorias", CategoriaController.salvarCategoria);
 
 export default router;

@@ -6,7 +6,8 @@ const model = mongoose.model;
 const ProdutoSchema = new Schema({
   produto: String,
   categoria: String,
-  fornecedor: String,
+  fornecedorRazaoSocial: String,
+  fornecedorCnpj: String,
   valorProduto: Number,
 });
 

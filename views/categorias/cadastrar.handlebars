@@ -66,9 +66,9 @@
                 object[key] = value;
             });
 
-        await axios.post('http://localhost:8080/categorias/salvar', object)
+        await axios.post('http://localhost:8080/api/categorias', object)
             .then(data => {
-                document.location.href = 'http://localhost:8080/categorias'
+                document.location.href = 'http://localhost:8080/categorias/listar'
             })
             .catch(error => {
                 console.log('Erro ' + error.message)

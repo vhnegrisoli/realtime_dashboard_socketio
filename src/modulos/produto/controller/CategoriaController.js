@@ -14,10 +14,14 @@ class CategoriaController {
         descricao: categoria.descricao,
       });
     });
-    console.log(categoriasResponse);
     res.render("categorias/listar", {
       categorias: categoriasResponse,
     });
+  }
+
+  async buscarTodasCategorias(req, res) {
+    const categorias = await Categoria.find();
+    return res.json(categorias);
   }
 
   async salvarCategoria(req, res) {
@@ -32,11 +36,6 @@ class CategoriaController {
     }
     const novaCategoria = await Categoria.create({ descricao });
     return res.json(novaCategoria);
-  }
-
-  async buscarCategoriasApi(req, res) {
-    const categorias = await Categoria.find();
-    return res.json(categorias);
   }
 }
 

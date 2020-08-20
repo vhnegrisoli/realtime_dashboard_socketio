@@ -8,5 +8,9 @@ router.get("/", DashboardController.iniciarFormulario);
 router.get("/dashboard", DashboardController.iniciarDashboard);
 router.post("/atualizar-dados", DashboardController.atualizarDados);
 router.post("/novos-dados", DashboardController.novosDados);
+router.post(
+  "/api/dashboard/inserir-dados-iniciais",
+  DashboardController.inserirDadosIniciais
+);
 
 export default router;

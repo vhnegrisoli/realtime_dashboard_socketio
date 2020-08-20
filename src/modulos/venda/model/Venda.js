@@ -5,13 +5,12 @@ const model = mongoose.model;
 
 const VendaSchema = new Schema({
   produto: String,
+  quantidade: Number,
   categoria: String,
-  fornecedor: String,
+  fornecedorRazaoSocial: String,
+  razaoSocialCnpj: String,
   valorVenda: Number,
   dataVenda: Date,
-  mesVenda: String,
-  mesVendaValor: Number,
-  anoVenda: Number,
 });
 
 module.exports = model("Venda", VendaSchema);
