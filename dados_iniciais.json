@@ -5,7 +5,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2018-05-03T03:00:00Z",
+         "dataVenda":"2020-05-03T03:00:00Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -14,7 +14,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2018-06-15T03:00:00Z",
+         "dataVenda":"2020-06-15T03:00:00Z",
          "quantidade":2,
          "valorVenda":110.0
       },
@@ -23,7 +23,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-01-03T02:00:00Z",
+         "dataVenda":"2020-01-03T02:00:00Z",
          "quantidade":3,
          "valorVenda":56.7
       },
@@ -32,7 +32,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-03-03T03:00:00Z",
+         "dataVenda":"2020-03-03T03:00:00Z",
          "quantidade":3,
          "valorVenda":56.7
       },
@@ -41,7 +41,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-07-19T03:00:00Z",
+         "dataVenda":"2020-07-19T03:00:00Z",
          "quantidade":3,
          "valorVenda":56.7
       },
@@ -50,7 +50,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-03-11T01:30:31Z",
+         "dataVenda":"2020-03-11T01:30:31Z",
          "quantidade":3,
          "valorVenda":56.7
       },
@@ -59,7 +59,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-03-11T01:32:22Z",
+         "dataVenda":"2020-03-11T01:32:22Z",
          "quantidade":3,
          "valorVenda":56.7
       },
@@ -68,7 +68,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2018-10-12T03:00:00Z",
+         "dataVenda":"2020-10-12T03:00:00Z",
          "quantidade":2,
          "valorVenda":40.0
       },
@@ -77,7 +77,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-03-03T03:00:00Z",
+         "dataVenda":"2020-03-03T03:00:00Z",
          "quantidade":3,
          "valorVenda":40.0
       },
@@ -86,7 +86,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-03-03T03:00:00Z",
+         "dataVenda":"2020-03-03T03:00:00Z",
          "quantidade":1,
          "valorVenda":40.0
       },
@@ -95,7 +95,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-03-11T11:40:39Z",
+         "dataVenda":"2020-03-11T11:40:39Z",
          "quantidade":1,
          "valorVenda":40.0
       },
@@ -104,7 +104,7 @@
          "categoria":"Joias",
          "fornecedorRazaoSocial":"ÂNCORA JOALHERIAS",
          "fornecedorCnpj":"53.404.786/0001-79",
-         "dataVenda":"2018-10-12T03:00:00Z",
+         "dataVenda":"2020-10-12T03:00:00Z",
          "quantidade":2,
          "valorVenda":9000.6
       },
@@ -113,7 +113,7 @@
          "categoria":"Joias",
          "fornecedorRazaoSocial":"ÂNCORA JOALHERIAS",
          "fornecedorCnpj":"53.404.786/0001-79",
-         "dataVenda":"2019-03-31T03:00:00Z",
+         "dataVenda":"2020-03-31T03:00:00Z",
          "quantidade":1,
          "valorVenda":9000.6
       },
@@ -122,7 +122,7 @@
          "categoria":"Joias",
          "fornecedorRazaoSocial":"ÂNCORA JOALHERIAS",
          "fornecedorCnpj":"53.404.786/0001-79",
-         "dataVenda":"2019-07-19T03:00:00Z",
+         "dataVenda":"2020-07-19T03:00:00Z",
          "quantidade":1,
          "valorVenda":9000.6
       },
@@ -131,7 +131,7 @@
          "categoria":"Joias",
          "fornecedorRazaoSocial":"ÂNCORA JOALHERIAS",
          "fornecedorCnpj":"53.404.786/0001-79",
-         "dataVenda":"2019-03-11T01:32:22Z",
+         "dataVenda":"2020-03-11T01:32:22Z",
          "quantidade":1,
          "valorVenda":9000.6
       },
@@ -140,25 +140,7 @@
          "categoria":"Joias",
          "fornecedorRazaoSocial":"ÂNCORA JOALHERIAS",
          "fornecedorCnpj":"53.404.786/0001-79",
-         "dataVenda":"2019-03-11T11:40:39Z",
-         "quantidade":2,
-         "valorVenda":9000.6
-      },
-      {
-         "produto":"Livro Infantil - Editora Âncora",
-         "categoria":"Livros e Quadrinhos",
-         "fornecedorRazaoSocial":"ÂNCORA S/A",
-         "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-03-11T12:16:01Z",
-         "quantidade":1,
-         "valorVenda":40.0
-      },
-      {
-         "produto":"Anel de Noivado",
-         "categoria":"Joias",
-         "fornecedorRazaoSocial":"ÂNCORA JOALHERIAS",
-         "fornecedorCnpj":"53.404.786/0001-79",
-         "dataVenda":"2019-03-11T12:16:01Z",
+         "dataVenda":"2020-03-11T11:40:39Z",
          "quantidade":2,
          "valorVenda":9000.6
       },
@@ -167,7 +149,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-03-11T12:17:36Z",
+         "dataVenda":"2020-03-11T12:16:01Z",
          "quantidade":1,
          "valorVenda":40.0
       },
@@ -176,7 +158,7 @@
          "categoria":"Joias",
          "fornecedorRazaoSocial":"ÂNCORA JOALHERIAS",
          "fornecedorCnpj":"53.404.786/0001-79",
-         "dataVenda":"2019-03-11T12:17:36Z",
+         "dataVenda":"2020-03-11T12:16:01Z",
          "quantidade":2,
          "valorVenda":9000.6
       },
@@ -185,7 +167,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-03-11T12:17:49Z",
+         "dataVenda":"2020-03-11T12:17:36Z",
          "quantidade":1,
          "valorVenda":40.0
       },
@@ -194,7 +176,25 @@
          "categoria":"Joias",
          "fornecedorRazaoSocial":"ÂNCORA JOALHERIAS",
          "fornecedorCnpj":"53.404.786/0001-79",
-         "dataVenda":"2019-03-11T12:17:49Z",
+         "dataVenda":"2020-03-11T12:17:36Z",
+         "quantidade":2,
+         "valorVenda":9000.6
+      },
+      {
+         "produto":"Livro Infantil - Editora Âncora",
+         "categoria":"Livros e Quadrinhos",
+         "fornecedorRazaoSocial":"ÂNCORA S/A",
+         "fornecedorCnpj":"23.071.004/4001-01",
+         "dataVenda":"2020-03-11T12:17:49Z",
+         "quantidade":1,
+         "valorVenda":40.0
+      },
+      {
+         "produto":"Anel de Noivado",
+         "categoria":"Joias",
+         "fornecedorRazaoSocial":"ÂNCORA JOALHERIAS",
+         "fornecedorCnpj":"53.404.786/0001-79",
+         "dataVenda":"2020-03-11T12:17:49Z",
          "quantidade":2,
          "valorVenda":9000.6
       },
@@ -203,7 +203,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-03-11T18:13:27Z",
+         "dataVenda":"2020-03-11T18:13:27Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -212,7 +212,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-03-11T18:13:27Z",
+         "dataVenda":"2020-03-11T18:13:27Z",
          "quantidade":2,
          "valorVenda":56.7
       },
@@ -221,7 +221,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-03-25T12:30:33Z",
+         "dataVenda":"2020-03-25T12:30:33Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -230,7 +230,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-03-25T12:30:33Z",
+         "dataVenda":"2020-03-25T12:30:33Z",
          "quantidade":2,
          "valorVenda":56.7
       },
@@ -239,7 +239,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-03-25T16:58:00Z",
+         "dataVenda":"2020-03-25T16:58:00Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -248,7 +248,7 @@
          "categoria":"Joias",
          "fornecedorRazaoSocial":"ÂNCORA JOALHERIAS",
          "fornecedorCnpj":"53.404.786/0001-79",
-         "dataVenda":"2019-03-25T16:58:00Z",
+         "dataVenda":"2020-03-25T16:58:00Z",
          "quantidade":2,
          "valorVenda":9000.6
       },
@@ -257,7 +257,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-03-27T16:21:32Z",
+         "dataVenda":"2020-03-27T16:21:32Z",
          "quantidade":4,
          "valorVenda":110.0
       },
@@ -266,7 +266,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-03-27T16:21:32Z",
+         "dataVenda":"2020-03-27T16:21:32Z",
          "quantidade":1,
          "valorVenda":72.9
       },
@@ -275,7 +275,7 @@
          "categoria":"Materiais",
          "fornecedorRazaoSocial":"KABUM COMÉRCIO ELETRÔNICO S/A",
          "fornecedorCnpj":"05.570.714/0001-59 ",
-         "dataVenda":"2019-03-27T16:21:32Z",
+         "dataVenda":"2020-03-27T16:21:32Z",
          "quantidade":2,
          "valorVenda":2647.0
       },
@@ -284,7 +284,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-04-09T15:25:06Z",
+         "dataVenda":"2020-04-09T15:25:06Z",
          "quantidade":1,
          "valorVenda":40.0
       },
@@ -293,7 +293,7 @@
          "categoria":"Joias",
          "fornecedorRazaoSocial":"ÂNCORA JOALHERIAS",
          "fornecedorCnpj":"53.404.786/0001-79",
-         "dataVenda":"2019-04-09T15:25:06Z",
+         "dataVenda":"2020-04-09T15:25:06Z",
          "quantidade":2,
          "valorVenda":9000.6
       },
@@ -302,7 +302,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-04-09T15:25:35Z",
+         "dataVenda":"2020-04-09T15:25:35Z",
          "quantidade":1,
          "valorVenda":40.0
       },
@@ -311,7 +311,7 @@
          "categoria":"Joias",
          "fornecedorRazaoSocial":"ÂNCORA JOALHERIAS",
          "fornecedorCnpj":"53.404.786/0001-79",
-         "dataVenda":"2019-04-09T15:25:35Z",
+         "dataVenda":"2020-04-09T15:25:35Z",
          "quantidade":2,
          "valorVenda":9000.6
       },
@@ -320,7 +320,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T20:13:36Z",
+         "dataVenda":"2020-04-22T20:13:36Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -329,7 +329,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T20:13:36Z",
+         "dataVenda":"2020-04-22T20:13:36Z",
          "quantidade":2,
          "valorVenda":56.7
       },
@@ -338,7 +338,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T21:55:03Z",
+         "dataVenda":"2020-04-22T21:55:03Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -347,7 +347,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T21:55:03Z",
+         "dataVenda":"2020-04-22T21:55:03Z",
          "quantidade":2,
          "valorVenda":56.7
       },
@@ -356,7 +356,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T21:56:39Z",
+         "dataVenda":"2020-04-22T21:56:39Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -365,7 +365,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T21:56:39Z",
+         "dataVenda":"2020-04-22T21:56:39Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -374,7 +374,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T23:06:12Z",
+         "dataVenda":"2020-04-22T23:06:12Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -383,7 +383,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T23:06:12Z",
+         "dataVenda":"2020-04-22T23:06:12Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -392,7 +392,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T23:07:33Z",
+         "dataVenda":"2020-04-22T23:07:33Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -401,7 +401,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T23:07:33Z",
+         "dataVenda":"2020-04-22T23:07:33Z",
          "quantidade":3,
          "valorVenda":72.9
       },
@@ -410,7 +410,7 @@
          "categoria":"Materiais",
          "fornecedorRazaoSocial":"KABUM COMÉRCIO ELETRÔNICO S/A",
          "fornecedorCnpj":"05.570.714/0001-59 ",
-         "dataVenda":"2019-04-22T23:07:33Z",
+         "dataVenda":"2020-04-22T23:07:33Z",
          "quantidade":1,
          "valorVenda":2647.0
       },
@@ -419,7 +419,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T23:07:53Z",
+         "dataVenda":"2020-04-22T23:07:53Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -428,7 +428,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T23:19:21Z",
+         "dataVenda":"2020-04-22T23:19:21Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -437,7 +437,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T23:19:21Z",
+         "dataVenda":"2020-04-22T23:19:21Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -446,7 +446,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T23:19:51Z",
+         "dataVenda":"2020-04-22T23:19:51Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -455,7 +455,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T23:19:51Z",
+         "dataVenda":"2020-04-22T23:19:51Z",
          "quantidade":0,
          "valorVenda":56.7
       },
@@ -464,7 +464,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-04-22T23:19:51Z",
+         "dataVenda":"2020-04-22T23:19:51Z",
          "quantidade":1,
          "valorVenda":40.0
       },
@@ -473,7 +473,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-22T23:21:06Z",
+         "dataVenda":"2020-04-22T23:21:06Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -482,7 +482,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-23T00:03:03Z",
+         "dataVenda":"2020-04-23T00:03:03Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -491,7 +491,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-23T00:03:03Z",
+         "dataVenda":"2020-04-23T00:03:03Z",
          "quantidade":2,
          "valorVenda":56.7
       },
@@ -500,7 +500,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-23T00:03:03Z",
+         "dataVenda":"2020-04-23T00:03:03Z",
          "quantidade":3,
          "valorVenda":72.9
       },
@@ -509,7 +509,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-28T17:33:30Z",
+         "dataVenda":"2020-04-28T17:33:30Z",
          "quantidade":3,
          "valorVenda":110.0
       },
@@ -518,7 +518,7 @@
          "categoria":"Materiais",
          "fornecedorRazaoSocial":"KABUM COMÉRCIO ELETRÔNICO S/A",
          "fornecedorCnpj":"05.570.714/0001-59 ",
-         "dataVenda":"2019-04-28T17:33:30Z",
+         "dataVenda":"2020-04-28T17:33:30Z",
          "quantidade":1,
          "valorVenda":2647.0
       },
@@ -527,7 +527,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-04-30T13:38:49Z",
+         "dataVenda":"2020-04-30T13:38:49Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -536,7 +536,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-04-30T13:38:49Z",
+         "dataVenda":"2020-04-30T13:38:49Z",
          "quantidade":1,
          "valorVenda":40.0
       },
@@ -545,7 +545,7 @@
          "categoria":"Materiais",
          "fornecedorRazaoSocial":"KABUM COMÉRCIO ELETRÔNICO S/A",
          "fornecedorCnpj":"05.570.714/0001-59 ",
-         "dataVenda":"2019-04-30T15:20:41Z",
+         "dataVenda":"2020-04-30T15:20:41Z",
          "quantidade":2,
          "valorVenda":2647.0
       },
@@ -554,7 +554,7 @@
          "categoria":"Materiais",
          "fornecedorRazaoSocial":"KABUM COMÉRCIO ELETRÔNICO S/A",
          "fornecedorCnpj":"05.570.714/0001-59 ",
-         "dataVenda":"2019-04-30T15:21:53Z",
+         "dataVenda":"2020-04-30T15:21:53Z",
          "quantidade":1,
          "valorVenda":2647.0
       },
@@ -563,7 +563,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-01T16:53:41Z",
+         "dataVenda":"2020-05-01T16:53:41Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -572,7 +572,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-02T11:41:13Z",
+         "dataVenda":"2020-05-02T11:41:13Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -581,7 +581,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-02T11:41:13Z",
+         "dataVenda":"2020-05-02T11:41:13Z",
          "quantidade":3,
          "valorVenda":56.7
       },
@@ -590,7 +590,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-05-02T11:41:13Z",
+         "dataVenda":"2020-05-02T11:41:13Z",
          "quantidade":1,
          "valorVenda":40.0
       },
@@ -599,7 +599,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-03T14:03:13Z",
+         "dataVenda":"2020-05-03T14:03:13Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -608,7 +608,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-05-03T14:03:13Z",
+         "dataVenda":"2020-05-03T14:03:13Z",
          "quantidade":1,
          "valorVenda":40.0
       },
@@ -617,7 +617,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-05T14:15:14Z",
+         "dataVenda":"2020-05-05T14:15:14Z",
          "quantidade":2,
          "valorVenda":72.9
       },
@@ -626,7 +626,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-05T14:15:14Z",
+         "dataVenda":"2020-05-05T14:15:14Z",
          "quantidade":2,
          "valorVenda":56.7
       },
@@ -635,7 +635,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-07T00:38:38Z",
+         "dataVenda":"2020-05-07T00:38:38Z",
          "quantidade":2,
          "valorVenda":110.0
       },
@@ -644,7 +644,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-07T00:38:38Z",
+         "dataVenda":"2020-05-07T00:38:38Z",
          "quantidade":2,
          "valorVenda":56.7
       },
@@ -653,7 +653,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-07T14:50:08Z",
+         "dataVenda":"2020-05-07T14:50:08Z",
          "quantidade":2,
          "valorVenda":110.0
       },
@@ -662,7 +662,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-07T14:50:08Z",
+         "dataVenda":"2020-05-07T14:50:08Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -671,7 +671,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-12T23:13:06Z",
+         "dataVenda":"2020-05-12T23:13:06Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -680,7 +680,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-05-12T23:13:06Z",
+         "dataVenda":"2020-05-12T23:13:06Z",
          "quantidade":2,
          "valorVenda":40.0
       },
@@ -689,7 +689,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-14T00:18:12Z",
+         "dataVenda":"2020-05-14T00:18:12Z",
          "quantidade":2,
          "valorVenda":110.0
       },
@@ -698,7 +698,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-14T00:18:12Z",
+         "dataVenda":"2020-05-14T00:18:12Z",
          "quantidade":2,
          "valorVenda":56.7
       },
@@ -707,7 +707,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-14T00:18:12Z",
+         "dataVenda":"2020-05-14T00:18:12Z",
          "quantidade":1,
          "valorVenda":72.9
       },
@@ -716,7 +716,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-27T12:27:33Z",
+         "dataVenda":"2020-05-27T12:27:33Z",
          "quantidade":2,
          "valorVenda":110.0
       },
@@ -725,7 +725,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-27T12:27:33Z",
+         "dataVenda":"2020-05-27T12:27:33Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -734,7 +734,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-27T21:48:55Z",
+         "dataVenda":"2020-05-27T21:48:55Z",
          "quantidade":3,
          "valorVenda":110.0
       },
@@ -743,7 +743,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-27T21:48:55Z",
+         "dataVenda":"2020-05-27T21:48:55Z",
          "quantidade":3,
          "valorVenda":56.7
       },
@@ -752,7 +752,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-06-04T00:42:28Z",
+         "dataVenda":"2020-06-04T00:42:28Z",
          "quantidade":2,
          "valorVenda":110.0
       },
@@ -761,7 +761,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-06-04T00:42:28Z",
+         "dataVenda":"2020-06-04T00:42:28Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -770,7 +770,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-06-05T22:24:58Z",
+         "dataVenda":"2020-06-05T22:24:58Z",
          "quantidade":2,
          "valorVenda":110.0
       },
@@ -779,7 +779,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-06-05T22:24:58Z",
+         "dataVenda":"2020-06-05T22:24:58Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -788,7 +788,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-06-17T16:01:14Z",
+         "dataVenda":"2020-06-17T16:01:14Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -797,7 +797,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-06-17T16:01:14Z",
+         "dataVenda":"2020-06-17T16:01:14Z",
          "quantidade":2,
          "valorVenda":56.7
       },
@@ -806,7 +806,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-06-22T18:57:23Z",
+         "dataVenda":"2020-06-22T18:57:23Z",
          "quantidade":2,
          "valorVenda":110.0
       },
@@ -815,7 +815,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-06-22T18:57:23Z",
+         "dataVenda":"2020-06-22T18:57:23Z",
          "quantidade":2,
          "valorVenda":56.7
       },
@@ -824,7 +824,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-07-12T13:27:04Z",
+         "dataVenda":"2020-07-12T13:27:04Z",
          "quantidade":3,
          "valorVenda":110.0
       },
@@ -833,7 +833,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-07-12T23:38:38Z",
+         "dataVenda":"2020-07-12T23:38:38Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -842,7 +842,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-07-12T23:38:38Z",
+         "dataVenda":"2020-07-12T23:38:38Z",
          "quantidade":2,
          "valorVenda":56.7
       },
@@ -851,7 +851,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-07-22T22:29:38Z",
+         "dataVenda":"2020-07-22T22:29:38Z",
          "quantidade":2,
          "valorVenda":110.0
       },
@@ -860,7 +860,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-07-22T22:29:38Z",
+         "dataVenda":"2020-07-22T22:29:38Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -869,7 +869,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-07-24T14:10:30Z",
+         "dataVenda":"2020-07-24T14:10:30Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -878,7 +878,7 @@
          "categoria":"Joias",
          "fornecedorRazaoSocial":"ÂNCORA JOALHERIAS",
          "fornecedorCnpj":"53.404.786/0001-79",
-         "dataVenda":"2019-07-24T20:18:24Z",
+         "dataVenda":"2020-07-24T20:18:24Z",
          "quantidade":1,
          "valorVenda":9000.6
       },
@@ -887,7 +887,7 @@
          "categoria":"Joias",
          "fornecedorRazaoSocial":"ÂNCORA JOALHERIAS",
          "fornecedorCnpj":"53.404.786/0001-79",
-         "dataVenda":"2019-07-24T20:21:08Z",
+         "dataVenda":"2020-07-24T20:21:08Z",
          "quantidade":1,
          "valorVenda":9000.6
       },
@@ -896,7 +896,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-07-31T01:09:47Z",
+         "dataVenda":"2020-07-31T01:09:47Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -905,7 +905,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-07-31T01:09:47Z",
+         "dataVenda":"2020-07-31T01:09:47Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -914,7 +914,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-07-31T01:09:47Z",
+         "dataVenda":"2020-07-31T01:09:47Z",
          "quantidade":2,
          "valorVenda":40.0
       },
@@ -923,7 +923,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-08-01T12:18:42Z",
+         "dataVenda":"2020-08-01T12:18:42Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -932,7 +932,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-08-01T12:18:42Z",
+         "dataVenda":"2020-08-01T12:18:42Z",
          "quantidade":3,
          "valorVenda":56.7
       },
@@ -941,7 +941,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-08-07T16:38:45Z",
+         "dataVenda":"2020-08-07T16:38:45Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -950,7 +950,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-09-03T04:04:26Z",
+         "dataVenda":"2020-09-03T04:04:26Z",
          "quantidade":2,
          "valorVenda":110.0
       },
@@ -959,7 +959,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-09-03T04:04:26Z",
+         "dataVenda":"2020-09-03T04:04:26Z",
          "quantidade":3,
          "valorVenda":40.0
       },
@@ -968,7 +968,7 @@
          "categoria":"Diversos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-09-03T04:04:26Z",
+         "dataVenda":"2020-09-03T04:04:26Z",
          "quantidade":5,
          "valorVenda":156.0
       },
@@ -977,7 +977,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-09-03T18:21:20Z",
+         "dataVenda":"2020-09-03T18:21:20Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -986,7 +986,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-10-02T12:02:48Z",
+         "dataVenda":"2020-10-02T12:02:48Z",
          "quantidade":2,
          "valorVenda":110.0
       },
@@ -995,7 +995,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-10-02T12:02:48Z",
+         "dataVenda":"2020-10-02T12:02:48Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -1004,7 +1004,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-10-02T12:02:48Z",
+         "dataVenda":"2020-10-02T12:02:48Z",
          "quantidade":2,
          "valorVenda":72.9
       },
@@ -1013,7 +1013,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-10-02T12:25:33Z",
+         "dataVenda":"2020-10-02T12:25:33Z",
          "quantidade":2,
          "valorVenda":110.0
       },
@@ -1022,7 +1022,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-10-02T12:25:33Z",
+         "dataVenda":"2020-10-02T12:25:33Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -1031,7 +1031,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-10-02T12:25:33Z",
+         "dataVenda":"2020-10-02T12:25:33Z",
          "quantidade":2,
          "valorVenda":40.0
       },
@@ -1040,7 +1040,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-10-02T15:32:58Z",
+         "dataVenda":"2020-10-02T15:32:58Z",
          "quantidade":2,
          "valorVenda":72.9
       },
@@ -1049,7 +1049,7 @@
          "categoria":"Materiais",
          "fornecedorRazaoSocial":"KABUM COMÉRCIO ELETRÔNICO S/A",
          "fornecedorCnpj":"05.570.714/0001-59 ",
-         "dataVenda":"2019-10-02T15:32:58Z",
+         "dataVenda":"2020-10-02T15:32:58Z",
          "quantidade":1,
          "valorVenda":2647.0
       },
@@ -1058,7 +1058,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-03-26T02:30:19Z",
+         "dataVenda":"2020-03-26T02:30:19Z",
          "quantidade":2,
          "valorVenda":110.0
       },
@@ -1067,7 +1067,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-03-26T02:30:19Z",
+         "dataVenda":"2020-03-26T02:30:19Z",
          "quantidade":3,
          "valorVenda":56.7
       },
@@ -1076,7 +1076,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-06-17T16:28:32Z",
+         "dataVenda":"2020-06-17T16:28:32Z",
          "quantidade":2,
          "valorVenda":110.0
       },
@@ -1085,7 +1085,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-06-17T16:28:32Z",
+         "dataVenda":"2020-06-17T16:28:32Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -1094,7 +1094,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-07-24T11:56:37Z",
+         "dataVenda":"2020-07-24T11:56:37Z",
          "quantidade":1,
          "valorVenda":110.0
       },
@@ -1103,7 +1103,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-05-07T14:50:08Z",
+         "dataVenda":"2020-05-07T14:50:08Z",
          "quantidade":3,
          "valorVenda":40.0
       },
@@ -1112,7 +1112,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-07-24T14:53:04Z",
+         "dataVenda":"2020-07-24T14:53:04Z",
          "quantidade":2,
          "valorVenda":110.0
       },
@@ -1121,7 +1121,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-07-24T14:53:04Z",
+         "dataVenda":"2020-07-24T14:53:04Z",
          "quantidade":1,
          "valorVenda":56.7
       },
@@ -1130,7 +1130,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-08-01T12:11:02Z",
+         "dataVenda":"2020-08-01T12:11:02Z",
          "quantidade":4,
          "valorVenda":110.0
       },
@@ -1139,7 +1139,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-08-01T12:11:02Z",
+         "dataVenda":"2020-08-01T12:11:02Z",
          "quantidade":8,
          "valorVenda":40.0
       },
@@ -1148,7 +1148,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-05-27T21:48:55Z",
+         "dataVenda":"2020-05-27T21:48:55Z",
          "quantidade":2,
          "valorVenda":40.0
       },
@@ -1157,7 +1157,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-27T22:41:29Z",
+         "dataVenda":"2020-05-27T22:41:29Z",
          "quantidade":3,
          "valorVenda":110.0
       },
@@ -1166,7 +1166,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"SARAIVA E SICILIANO S/A",
          "fornecedorCnpj":"61.365.284/0001-04",
-         "dataVenda":"2019-05-27T22:41:29Z",
+         "dataVenda":"2020-05-27T22:41:29Z",
          "quantidade":2,
          "valorVenda":56.7
       },
@@ -1175,7 +1175,7 @@
          "categoria":"Livros e Quadrinhos",
          "fornecedorRazaoSocial":"ÂNCORA S/A",
          "fornecedorCnpj":"23.071.004/4001-01",
-         "dataVenda":"2019-07-12T23:38:38Z",
+         "dataVenda":"2020-07-12T23:38:38Z",
          "quantidade":1,
          "valorVenda":40.0
       }
