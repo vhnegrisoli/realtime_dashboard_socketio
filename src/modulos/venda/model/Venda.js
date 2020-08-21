@@ -11,6 +11,8 @@ const VendaSchema = new Schema({
   razaoSocialCnpj: String,
   valorVenda: Number,
   dataVenda: Date,
+  situacao: String,
+  aprovacao: String,
 });
 
 module.exports = model("Venda", VendaSchema);

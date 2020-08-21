@@ -1,6 +1,8 @@
 import * as io from "../../../config/socket/index";
 
 import Venda from "../model/Venda";
+import DashboardController from "../../dashboard/controller/DashboardController";
+import dashboardController from "../../dashboard/controller/DashboardController";
 
 class VendaController {
   async buscarTodas(req, res) {
@@ -25,6 +27,8 @@ class VendaController {
       dataVenda,
       quantidade,
       valorVenda,
+      situacao,
+      aprovacao,
     } = req.body;
     const vendaSalva = await Venda.create({
       produto,
@@ -34,7 +38,10 @@ class VendaController {
       dataVenda,
       quantidade,
       valorVenda,
+      situacao,
+      aprovacao,
     });
+    await DashboardController.atualizarDados(req, res);
     return res.json(vendaSalva);
   }
 }

@@ -1,16 +1,23 @@
 import { Router } from "express";
 
-import DashboardController from "../controller/dashboardController";
+import DashboardController from "../controller/DashboardController";
 
 const router = new Router();
 
-router.get("/", DashboardController.iniciarFormulario);
-router.get("/dashboard", DashboardController.iniciarDashboard);
-router.post("/atualizar-dados", DashboardController.atualizarDados);
-router.post("/novos-dados", DashboardController.novosDados);
+const controller = DashboardController;
+
+router.get("/", controller.iniciarFormulario);
+router.get("/dashboard", controller.iniciarDashboard);
+router.post("/atualizar-dados", controller._atualizarDados);
+router.post("/novos-dados", controller.novosDados);
 router.post(
   "/api/dashboard/inserir-dados-iniciais",
-  DashboardController.inserirDadosIniciais
+  controller.inserirDadosIniciais
 );
+router.get(
+  "/api/dashboard/cards",
+  DashboardController.recuperarIndicadoresDosCards
+);
+router.get("/api/dashboard/indicadores", DashboardController.getIndicadores);
 
 export default router;
