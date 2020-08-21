@@ -20,7 +20,7 @@
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col m2">
+            <div class="col m3">
                 <div class="card col s12 center-align">
                     <span class="card-title">Vendas finalizadas</span>
                     <div class="card-content">
@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <div class="col m2">
+            <div class="col m3">
                 <div class="card col s12 center-align">
                     <span class="card-title">Vendas abertas</span>
                     <div class="card-content">
@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <div class="col m2">
+            <div class="col m3">
                 <div class="card col s12 center-align">
                     <span class="card-title">Vendas aprovadas</span>
                     <div class="card-content">
@@ -47,27 +47,11 @@
                 </div>
             </div>
 
-            <div class="col m2">
+            <div class="col m3">
                 <div class="card col s12 center-align">
                     <span class="card-title">Venda rejeitadas</span>
                     <div class="card-content">
                         <h5 id="card4" />
-                    </div>
-                </div>
-            </div>
-            <div class="col m2">
-                <div class="card col s12 center-align">
-                    <span class="card-title">Venda x produtos</span>
-                    <div class="card-content">
-                        <h5 id="card5" />
-                    </div>
-                </div>
-            </div>
-            <div class="col m2">
-                <div class="card col s12 center-align">
-                    <span class="card-title">Vendas x fornecedor</span>
-                    <div class="card-content">
-                        <h5 id="card6" />
                     </div>
                 </div>
             </div>
@@ -88,7 +72,7 @@
                 <div class="card col s12 center-align">
                     <span class="card-title">Análise de vendas por fornecedor</span>
                     <div class="card-content">
-                        <canvas id="chart3" width="400" height="150"></canvas>
+                        <canvas id="chart3" width="400" height="250"></canvas>
                     </div>
                 </div>
             </div>
@@ -96,7 +80,7 @@
                 <div class="card col s12 center-align">
                     <span class="card-title">Análise de vendas por categorias</span>
                     <div class="card-content">
-                        <canvas id="chart4" width="400" height="150"></canvas>
+                        <canvas id="chart4" width="400" height="250"></canvas>
                     </div>
                 </div>
             </div>
@@ -107,7 +91,7 @@
                 <div class="card col s12 center-align">
                     <span class="card-title">Análise de vendas por aprovações</span>
                     <div class="card-content">
-                        <canvas id="chart5" width="400" height="150"></canvas>
+                        <canvas id="chart5" width="400" height="250"></canvas>
                     </div>
                 </div>
             </div>
@@ -115,7 +99,7 @@
                 <div class="card col s12 center-align">
                     <span class="card-title">Análise de evendas por situações</span>
                     <div class="card-content">
-                        <canvas id="chart6" width="400" height="150"></canvas>
+                        <canvas id="chart6" width="400" height="250"></canvas>
                     </div>
                 </div>
             </div>
@@ -155,17 +139,13 @@
                         card2: 0,
                         card3: 0,
                         card4: 0,
-                        card5: 0,
-                        card6: 0,
                     }
                 })
-            const { card1, card2, card3, card4, card5, card6 } = totais
+            const { card1, card2, card3, card4 } = totais
             document.getElementById('card1').innerHTML = card1
             document.getElementById('card2').innerHTML = card2
             document.getElementById('card3').innerHTML = card3
             document.getElementById('card4').innerHTML = card4
-            document.getElementById('card5').innerHTML = card5
-            document.getElementById('card6').innerHTML = card6
         }
 
         definirDados = (labels, label, data) => {
@@ -175,7 +155,20 @@
                     label,
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
-                    data: data ? data : [0]
+                    data: data ? data : [0],
+                    fill: false
+                }]
+            }
+        }
+        definirDadosPie = (labels, label, data) => {
+            return {
+                labels: labels ? labels : [''],
+                datasets: [{
+                    label,
+                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                    borderColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                    data: data ? data : [0],
+                    fill: false
                 }]
             }
         }
@@ -203,15 +196,15 @@
             data: dadosChart4,
             options: {}
         });
-        var dadosChart5 = definirDados(null, 'Vendas por aprovações', null)
+        var dadosChart5 = definirDadosPie(null, 'Vendas por aprovações', null)
         var chart5 = new Chart(ctx5, {
             type: 'pie',
             data: dadosChart5,
             options: {}
         });
-        var dadosChart6 = definirDados(null, 'Vendas por situações', null)
+        var dadosChart6 = definirDadosPie(null, 'Vendas por situações', null)
         var chart6 = new Chart(ctx6, {
-            type: 'pie',
+            type: 'doughnut',
             data: dadosChart6,
             options: {}
         });
@@ -292,9 +285,7 @@
             document.getElementById('card5').innerHTML = value.cards.card5
             document.getElementById('card6').innerHTML = value.cards.card6
         });
-        console.log(dadosChart1)
     </script>
-    <!--JavaScript at end of body for optimized loading-->
     <script type=" text/javascript" src="js/materialize.min.js"></script>
 </body>
 

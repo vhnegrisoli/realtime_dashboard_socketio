@@ -75,19 +75,11 @@ class DashboardController {
     const vendasRejeitadas = await Venda.countDocuments({
       aprovacao: "REJEITADA",
     });
-    const mediaVendasPorProdutos = (
-      vendasFinalizadas / (await Produto.countDocuments())
-    ).toFixed(2);
-    const mediaVendasPorFornecedor = (
-      vendasFinalizadas / (await Fornecedor.countDocuments())
-    ).toFixed(2);
     return {
       card1: vendasFinalizadas,
       card2: vendasAbertas,
       card3: vendasAprovadas,
       card4: vendasRejeitadas,
-      card5: mediaVendasPorProdutos,
-      card6: mediaVendasPorFornecedor,
     };
   }
 
