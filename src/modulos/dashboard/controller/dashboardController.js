@@ -12,6 +12,7 @@ class DashboardController {
     const dados = controller.recuperarArquivoJson(res);
     await controller.removerCollectionsSeExistirem();
     await controller.inserirDadosIniciaisNasCollections(dados);
+    await controller.atualizarDados();
     return res
       .status(201)
       .json({ message: "Todos os dados iniciais foram inseridos!" });
