@@ -1,0 +1,19 @@
+version: "3"
+services:
+  socketio_dashboard-mongo:
+    image: mongo
+    container_name: socketio_dashboard-mongo
+    restart: always
+    environment:
+      MONGODB_PASS: "no"
+    ports:
+      - "27017:27017"
+      - "28017:28017"
+
+  socketio_dashboard:
+    build: "./"
+    container_name: socketio_dashboard
+    ports:
+      - "8080:8080"
+    depends_on:
+      - socketio_dashboard-mongo
