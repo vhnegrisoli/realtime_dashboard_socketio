@@ -129,7 +129,7 @@
         async function getTotais() {
             var totais = null;
             await axios
-                .get('http://localhost:8080/api/dashboard/cards')
+                .get('/api/dashboard/cards')
                 .then(res => {
                     totais = res.data
                 })
@@ -211,7 +211,7 @@
         getIndicadores()
         async function getIndicadores() {
             await axios
-                .get('http://localhost:8080/api/dashboard/indicadores')
+                .get('/api/dashboard/indicadores')
                 .then(res => {
                     var vendasMensais = res.data.vendasMensais
                     dadosChart1.labels = Object.values(vendasMensais).map(item => item._id)
