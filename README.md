@@ -1,6 +1,6 @@
 # Projeto: Dashboard em Real-Time :chart:
 
-![Tecnologias](https://uploaddeimagens.com.br/images/002/831/765/original/tecnologias.png?1597539856)
+![Tecnologias](https://uploaddeimagens.com.br/images/002/847/499/original/tecnologias.png?1598366640)
 
 ### Objetivos :white_check_mark:
 
@@ -31,18 +31,32 @@ tomadores de decisão: saber o que está acontecendo na hora, em tempo real!
 * HTML
 * Materialize CSS
 * Chart.js
+* Docker
+* Docker-compose
 
 ### Instalação :floppy_disk:
+
+##### Instalação local
 
 Para instalar o projeto, execute o comando:
 
 `yarn`
 
-### Executando :dvd:
+##### Executando local :dvd:
 
 Para executar o projeto, rode o comando:
 
 `yarn start`
+
+##### Instalação e execução via docker-compose
+
+Para instalar via docker-compose, basta apenas executar o comando:
+
+`docker-compose up -d`
+
+Para parar os containers, apenas execute o comando:
+
+`docker-compose stop`
 
 O projeto estará disponível no endereço: `http://localhost:8080`.
 
