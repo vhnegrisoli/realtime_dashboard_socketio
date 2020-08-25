@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Vendas</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="card col s12">
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <select onchange="alterarProdutoValor()" required id="produtoId" name="produtoId">
+                                        <option value="" disabled selected>Selecione um produto</option>
+                                        {{#produtos}}
+                                        <option value={{_id}}>{{produto}}</option>
+                                        {{/produtos}}
+                                    </select>
+                                    <label>Produtos</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Data da venda" id="data" name="data" required type="date"
+                                        class="validate">
+                                    <label for="first_name">Data da venda</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input onchange="alterarQuantidade()" placeholder="Quantidade" id="quantidade"
+                                        name="quantidade" required type="number" class="validate">
+                                    <label for="first_name">Quantidade</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <select required name="situacao" id="situacao">
+                                        <option value="" disabled selected>Selecione o status da venda</option>
+                                        {{#situacoes}}
+                                        <option value={{this}}>{{this}}</option>
+                                        {{/situacoes}}
+                                    </select>
+                                    <label>Situação</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select required name="aprovacao" id="aprovacao">
+                                        <option value="" disabled selected>Selecione o status da aprovação</option>
+                                        {{#aprovacoes}}
+                                        <option value={{this}}>{{this}}</option>
+                                        {{/aprovacoes}}
+                                    </select>
+                                    <label>Aprovação</label>
+                                </div>
+                            </div>
+                            <div class="row s12">
+                                <div class="row col s6">
+                                    <button class="btn waves-effect waves-light" id="button" type="submit"
+                                        onclick="save()" name="action">Salvar</button>
+                                </div>
+                                <div class="row col s3">
+                                    <h5>Total:</h5>
+                                </div>
+                                <div class="row col s3">
+                                    <h5 id="total" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type=" text/javascript" src="/public/js/materialize.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems, null);
+    });
+
+    document.getElementById("button").addEventListener("click", function (event) {
+        event.preventDefault()
+    });
+
+    document.getElementById("total").innerHTML = 0.00
+
+    var quantidadeSelecionada = 0.00
+    var produtoSelecionado = 0.00
+
+    function alterarProdutoValor() {
+        produtoSelecionado = document.getElementById("produtoId").value.split("preco")[1];
+        alterarTotal()
+    }
+
+    function alterarQuantidade() {
+        quantidadeSelecionada = document.getElementById("quantidade").value;
+        alterarTotal()
+    }
+
+    function alterarTotal() {
+        document.getElementById("total").innerHTML = (quantidadeSelecionada * produtoSelecionado).toFixed(2);
+    }
+
+    async function save() {
+        var object = {};
+        new FormData(document.querySelector('form'))
+            .forEach(function (value, key) {
+                object[key] = value;
+            });
+        object.produtoId = object.produtoId.split("preco")[0]
+        await axios.post('http://localhost:8080/api/vendas', object)
+            .then(data => {
+                console.log(data.data)
+            })
+            .catch(error => {
+                console.log('Erro ' + error.message)
+                document.getElementById('error').innerHTML = error.message
+            })
+    }
+</script>
+
+</html>

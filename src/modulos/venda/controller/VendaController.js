@@ -1,8 +1,8 @@
 import * as io from "../../../config/socket/index";
 
 import Venda from "../model/Venda";
+import Produto from "../../produto/model/Produto";
 import DashboardController from "../../dashboard/controller/DashboardController";
-import dashboardController from "../../dashboard/controller/DashboardController";
 
 class VendaController {
   async buscarTodas(req, res) {
@@ -18,26 +18,41 @@ class VendaController {
     });
   }
 
+  async iniciarFormulario(req, res) {
+    const produtos = await Produto.find();
+    const produtosResponse = [];
+    produtos.forEach((produto) => {
+      produtosResponse.push({
+        _id: `${produto._id}preco${produto.valorVenda}`,
+        produto: `${produto.produto} - R$${produto.valorVenda}`,
+      });
+    });
+    res.render("vendas/cadastrar", {
+      produtos: produtosResponse,
+      aprovacoes: ["APROVADA", "REJEITADA", "AGUARDANDO_APROVACAO"],
+      situacoes: ["FECHADA", "ABERTA"],
+    });
+  }
+
   async salvarVenda(req, res) {
+    const { produtoId, data, situacao, aprovacao, quantidade } = req.body;
+    const produtoExistente = await Produto.findById(produtoId);
     const {
       produto,
       categoria,
+      fornecedorCnpj,
       fornecedorRazaoSocial,
-      fornecedorRazaoCnpj,
-      dataVenda,
-      quantidade,
       valorVenda,
-      situacao,
-      aprovacao,
-    } = req.body;
+    } = produtoExistente;
+    const valorTotalVenda = (valorVenda * quantidade).toFixed(2);
     const vendaSalva = await Venda.create({
-      produto,
+      produto: produto,
       categoria,
       fornecedorRazaoSocial,
-      fornecedorRazaoCnpj,
-      dataVenda,
+      fornecedorCnpj,
+      dataVenda: data,
       quantidade,
-      valorVenda,
+      valorVenda: valorTotalVenda,
       situacao,
       aprovacao,
     });

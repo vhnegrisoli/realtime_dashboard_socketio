@@ -8,7 +8,7 @@ const ProdutoSchema = new Schema({
   categoria: String,
   fornecedorRazaoSocial: String,
   fornecedorCnpj: String,
-  valorProduto: Number,
+  valorVenda: Number,
 });
 
 module.exports = model("Produto", ProdutoSchema);
