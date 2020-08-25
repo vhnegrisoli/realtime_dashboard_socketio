@@ -5,6 +5,7 @@ import Categoria from "../../produto/model/Categoria";
 import Fornecedor from "../../produto/model/Fornecedor";
 import Produto from "../../produto/model/Produto";
 import Venda from "../../venda/model/Venda";
+import * as util from "../util/util";
 
 class DashboardController {
   async inserirDadosIniciais(req, res) {
@@ -104,7 +105,7 @@ class DashboardController {
           _id: {
             $substr: ["$dataVenda", 5, 2],
           },
-          count: {
+          value: {
             $sum: 1,
           },
         },
@@ -115,44 +116,7 @@ class DashboardController {
         },
       },
     ]);
-    vendasMensais.forEach((venda) => {
-      if (venda._id === "01") {
-        venda._id = "Jan";
-      }
-      if (venda._id === "02") {
-        venda._id = "Fev";
-      }
-      if (venda._id === "03") {
-        venda._id = "Mar";
-      }
-      if (venda._id === "04") {
-        venda._id = "Abr";
-      }
-      if (venda._id === "05") {
-        venda._id = "Mai";
-      }
-      if (venda._id === "06") {
-        venda._id = "Jun";
-      }
-      if (venda._id === "07") {
-        venda._id = "Jul";
-      }
-      if (venda._id === "08") {
-        venda._id = "Ago";
-      }
-      if (venda._id === "09") {
-        venda._id = "Set";
-      }
-      if (venda._id === "10") {
-        venda._id = "Out";
-      }
-      if (venda._id === "11") {
-        venda._id = "Nov";
-      }
-      if (venda._id === "12") {
-        venda._id = "Dez";
-      }
-    });
+    util.formatarDiaMesParaMesAbreviado(vendasMensais);
     return vendasMensais;
   }
 
@@ -163,7 +127,7 @@ class DashboardController {
           _id: {
             $substr: ["$dataVenda", 5, 2],
           },
-          valorTotal: { $sum: "$valorVenda" },
+          value: { $sum: "$valorVenda" },
         },
       },
       {
@@ -172,45 +136,8 @@ class DashboardController {
         },
       },
     ]);
-    vendasMensais.forEach((venda) => {
-      venda.valorTotal = venda.valorTotal.toFixed(2);
-      if (venda._id === "01") {
-        venda._id = "Jan";
-      }
-      if (venda._id === "02") {
-        venda._id = "Fev";
-      }
-      if (venda._id === "03") {
-        venda._id = "Mar";
-      }
-      if (venda._id === "04") {
-        venda._id = "Abr";
-      }
-      if (venda._id === "05") {
-        venda._id = "Mai";
-      }
-      if (venda._id === "06") {
-        venda._id = "Jun";
-      }
-      if (venda._id === "07") {
-        venda._id = "Jul";
-      }
-      if (venda._id === "08") {
-        venda._id = "Ago";
-      }
-      if (venda._id === "09") {
-        venda._id = "Set";
-      }
-      if (venda._id === "10") {
-        venda._id = "Out";
-      }
-      if (venda._id === "11") {
-        venda._id = "Nov";
-      }
-      if (venda._id === "12") {
-        venda._id = "Dez";
-      }
-    });
+    util.formatarDiaMesParaMesAbreviado(vendasMensais);
+    util.formatarValoresParaDuasCasasDecimais(vendasMensais);
     return vendasMensais;
   }
 
@@ -219,14 +146,14 @@ class DashboardController {
       {
         $group: {
           _id: "$produto",
-          count: {
+          value: {
             $sum: 1,
           },
         },
       },
       {
         $sort: {
-          count: 1,
+          value: 1,
         },
       },
     ]);
@@ -238,14 +165,14 @@ class DashboardController {
       {
         $group: {
           _id: "$fornecedorRazaoSocial",
-          count: {
+          value: {
             $sum: 1,
           },
         },
       },
       {
         $sort: {
-          count: 1,
+          value: 1,
         },
       },
     ]);
@@ -257,14 +184,14 @@ class DashboardController {
       {
         $group: {
           _id: "$categoria",
-          count: {
+          value: {
             $sum: 1,
           },
         },
       },
       {
         $sort: {
-          count: 1,
+          value: 1,
         },
       },
     ]);
@@ -276,14 +203,14 @@ class DashboardController {
       {
         $group: {
           _id: "$situacao",
-          count: {
+          value: {
             $sum: 1,
           },
         },
       },
       {
         $sort: {
-          count: 1,
+          value: 1,
         },
       },
     ]);
@@ -295,14 +222,14 @@ class DashboardController {
       {
         $group: {
           _id: "$aprovacao",
-          count: {
+          value: {
             $sum: 1,
           },
         },
       },
       {
         $sort: {
-          count: 1,
+          value: 1,
         },
       },
     ]);
@@ -314,7 +241,7 @@ class DashboardController {
   }
 
   async _atualizarDados(req, res) {
-    const { labels, data } = req.body;
+    const { _ids, data } = req.body;
     const controller = new DashboardController();
     const cards = await controller.buscarIndicadoresDosCards();
     const vendasMensais = await controller.buscarIndicadorVendasMensais();

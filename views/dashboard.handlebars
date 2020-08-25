@@ -234,37 +234,37 @@
                 .then(res => {
                     var vendasMensais = res.data.vendasMensais
                     dadosChart1.labels = Object.values(vendasMensais).map(item => item._id)
-                    dadosChart1.datasets[0].data = Object.values(vendasMensais).map(item => item.count)
+                    dadosChart1.datasets[0].data = Object.values(vendasMensais).map(item => item.value)
                     chart.update()
 
                     var vendasPorProdutos = res.data.vendasPorProdutos
                     dadosChart2.labels = Object.values(vendasPorProdutos).map(item => item._id)
-                    dadosChart2.datasets[0].data = Object.values(vendasPorProdutos).map(item => item.count)
+                    dadosChart2.datasets[0].data = Object.values(vendasPorProdutos).map(item => item.value)
                     chart2.update()
 
                     var vendasPorFornecedores = res.data.vendasPorFornecedores
                     dadosChart3.labels = Object.values(vendasPorFornecedores).map(item => item._id)
-                    dadosChart3.datasets[0].data = Object.values(vendasPorFornecedores).map(item => item.count)
+                    dadosChart3.datasets[0].data = Object.values(vendasPorFornecedores).map(item => item.value)
                     chart3.update()
 
                     var vendasPorCategorias = res.data.vendasPorCategorias
                     dadosChart4.labels = Object.values(vendasPorCategorias).map(item => item._id)
-                    dadosChart4.datasets[0].data = Object.values(vendasPorCategorias).map(item => item.count)
+                    dadosChart4.datasets[0].data = Object.values(vendasPorCategorias).map(item => item.value)
                     chart4.update()
 
                     var vendasPorSituacoes = res.data.vendasPorSituacoes
                     dadosChart5.labels = Object.values(vendasPorSituacoes).map(item => item._id)
-                    dadosChart5.datasets[0].data = Object.values(vendasPorSituacoes).map(item => item.count)
+                    dadosChart5.datasets[0].data = Object.values(vendasPorSituacoes).map(item => item.value)
                     chart5.update()
 
                     var vendasPorAprovacoes = res.data.vendasPorAprovacoes
                     dadosChart6.labels = Object.values(vendasPorAprovacoes).map(item => item._id)
-                    dadosChart6.datasets[0].data = Object.values(vendasPorAprovacoes).map(item => item.count)
+                    dadosChart6.datasets[0].data = Object.values(vendasPorAprovacoes).map(item => item.value)
                     chart6.update()
 
                     var vendasMensaisPorValorVenda = res.data.vendasMensaisPorValorVenda
                     dadosChart7.labels = Object.values(vendasMensaisPorValorVenda).map(item => item._id)
-                    dadosChart7.datasets[0].data = Object.values(vendasMensaisPorValorVenda).map(item => item.valorTotal)
+                    dadosChart7.datasets[0].data = Object.values(vendasMensaisPorValorVenda).map(item => item.value)
                     chart7.update()
                 }).catch(error => {
                     return []
@@ -274,37 +274,37 @@
         socket.on('dados', function (value) {
             var vendasMensais = value.vendasMensais
             dadosChart1.labels = Object.values(vendasMensais).map(item => item._id)
-            dadosChart1.datasets[0].data = Object.values(vendasMensais).map(item => item.count)
+            dadosChart1.datasets[0].data = Object.values(vendasMensais).map(item => item.value)
             chart.update()
 
             var vendasPorProdutos = value.vendasPorProdutos
             dadosChart2.labels = Object.values(vendasPorProdutos).map(item => item._id)
-            dadosChart2.datasets[0].data = Object.values(vendasPorProdutos).map(item => item.count)
+            dadosChart2.datasets[0].data = Object.values(vendasPorProdutos).map(item => item.value)
             chart2.update()
 
             var vendasPorFornecedores = value.vendasPorFornecedores
             dadosChart3.labels = Object.values(vendasPorFornecedores).map(item => item._id)
-            dadosChart3.datasets[0].data = Object.values(vendasPorFornecedores).map(item => item.count)
+            dadosChart3.datasets[0].data = Object.values(vendasPorFornecedores).map(item => item.value)
             chart3.update()
 
             var vendasPorCategorias = value.vendasPorCategorias
             dadosChart4.labels = Object.values(vendasPorCategorias).map(item => item._id)
-            dadosChart4.datasets[0].data = Object.values(vendasPorCategorias).map(item => item.count)
+            dadosChart4.datasets[0].data = Object.values(vendasPorCategorias).map(item => item.value)
             chart4.update()
 
             var vendasPorAprovacoes = value.vendasPorAprovacoes
             dadosChart5.labels = Object.values(vendasPorAprovacoes).map(item => item._id)
-            dadosChart5.datasets[0].data = Object.values(vendasPorAprovacoes).map(item => item.count)
+            dadosChart5.datasets[0].data = Object.values(vendasPorAprovacoes).map(item => item.value)
             chart5.update()
 
             var vendasPorSituacoes = value.vendasPorSituacoes
             dadosChart6.labels = Object.values(vendasPorSituacoes).map(item => item._id)
-            dadosChart6.datasets[0].data = Object.values(vendasPorSituacoes).map(item => item.count)
+            dadosChart6.datasets[0].data = Object.values(vendasPorSituacoes).map(item => item.value)
             chart6.update()
 
             var vendasMensaisPorValorVenda = value.vendasMensaisPorValorVenda
             dadosChart7.labels = Object.values(vendasMensaisPorValorVenda).map(item => item._id)
-            dadosChart7.datasets[0].data = Object.values(vendasMensaisPorValorVenda).map(item => item.valorTotal)
+            dadosChart7.datasets[0].data = Object.values(vendasMensaisPorValorVenda).map(item => item.value)
             chart7.update()
 
             document.getElementById('card1').innerHTML = value.cards.card1
