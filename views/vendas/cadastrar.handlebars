@@ -122,7 +122,7 @@
                 object[key] = value;
             });
         object.produtoId = object.produtoId.split("preco")[0]
-        await axios.post('http://localhost:8080/api/vendas', object)
+        await axios.post('/api/vendas', object)
             .then(data => {
                 console.log(data.data)
             })
