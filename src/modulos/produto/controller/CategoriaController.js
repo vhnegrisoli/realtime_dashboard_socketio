@@ -26,7 +26,6 @@ class CategoriaController {
 
   async salvarCategoria(req, res) {
     const { descricao } = req.body;
-    console.log(req.body);
     const categoria = await Categoria.findOne({ descricao });
     if (categoria) {
       console.log(categoria);

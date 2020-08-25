@@ -284,8 +284,6 @@ class DashboardController {
   }
 
   novosDados(req, res) {
-    console.log("Tô no servidor");
-    console.log(req.body);
     return res.render("dashboard", {
       card1: 0,
       card2: 0,
