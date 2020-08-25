@@ -6,7 +6,7 @@ const router = new Router();
 
 const controller = DashboardController;
 
-router.get("/", controller.iniciarFormulario);
+router.get("/", controller.redirecionarParaDashboard);
 router.get("/dashboard", controller.iniciarDashboard);
 router.post("/atualizar-dados", controller._atualizarDados);
 router.post("/novos-dados", controller.novosDados);

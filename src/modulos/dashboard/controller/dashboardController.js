@@ -236,6 +236,10 @@ class DashboardController {
     return vendasPorAprovacoes;
   }
 
+  async redirecionarParaDashboard(req, res) {
+    return res.redirect("/dashboard");
+  }
+
   async iniciarDashboard(req, res) {
     return res.render("dashboard");
   }
@@ -277,10 +281,6 @@ class DashboardController {
       card3: 0,
       card4: 0,
     });
-  }
-
-  iniciarFormulario(req, res) {
-    return res.render("main");
   }
 }
 export default new DashboardController();

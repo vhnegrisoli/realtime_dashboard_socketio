@@ -35,8 +35,13 @@ class VendaController {
   }
 
   async salvarVenda(req, res) {
+    const controller = new VendaController();
+    controller.validarDadosVenda(req.body, res);
     const { produtoId, data, situacao, aprovacao, quantidade } = req.body;
     const produtoExistente = await Produto.findById(produtoId);
+    if (!produtoExistente) {
+      return res.status(400).json({ message: "O produto não foi encontrado." });
+    }
     const {
       produto,
       categoria,
@@ -45,19 +50,45 @@ class VendaController {
       valorVenda,
     } = produtoExistente;
     const valorTotalVenda = (valorVenda * quantidade).toFixed(2);
-    const vendaSalva = await Venda.create({
-      produto: produto,
-      categoria,
-      fornecedorRazaoSocial,
-      fornecedorCnpj,
-      dataVenda: data,
-      quantidade,
-      valorVenda: valorTotalVenda,
-      situacao,
-      aprovacao,
-    });
-    await DashboardController.atualizarDados(req, res);
-    return res.json(vendaSalva);
+    try {
+      const vendaSalva = await Venda.create({
+        produto: produto,
+        categoria,
+        fornecedorRazaoSocial,
+        fornecedorCnpj,
+        dataVenda: data,
+        quantidade,
+        valorVenda: valorTotalVenda,
+        situacao,
+        aprovacao,
+      });
+      await DashboardController.atualizarDados(req, res);
+      return res.json(vendaSalva);
+    } catch (error) {
+      console.log(error);
+      return res
+        .status(400)
+        .json({ message: "Houve um erro ao salvar a venda." });
+    }
+  }
+
+  validarDadosVenda(dados, res) {
+    if (
+      !dados.produtoId ||
+      !dados.data ||
+      !dados.situacao ||
+      !dados.aprovacao ||
+      !dados.quantidade
+    ) {
+      return res
+        .status(400)
+        .json({ message: "Por favor, preencha todos os campos." });
+    }
+    if (dados.quantidade <= 0) {
+      return res
+        .status(400)
+        .json({ message: "A quantidade não pode ser menor ou igual a 0." });
+    }
   }
 }
 export default new VendaController();

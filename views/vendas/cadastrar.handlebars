@@ -78,6 +78,8 @@
                         </form>
                     </div>
                 </div>
+                <h6 style="color:green" id="success" />
+                <h6 style="color:red" id="error" />
             </div>
         </div>
     </div>
@@ -125,10 +127,12 @@
         await axios.post('/api/vendas', object)
             .then(data => {
                 console.log(data.data)
+                document.getElementById('error').innerHTML = ''
+                document.getElementById('success').innerHTML = 'Venda realizada com sucesso!'
             })
             .catch(error => {
-                console.log('Erro ' + error.message)
-                document.getElementById('error').innerHTML = error.message
+                document.getElementById('success').innerHTML = ''
+                document.getElementById('error').innerHTML = error.response.data.message
             })
     }
 </script>
