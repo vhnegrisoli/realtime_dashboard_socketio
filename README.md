@@ -69,7 +69,7 @@ a dashboard conforme o listener do Socket.io no front-end.
 
 ![Demonstração Dashboard API Call](https://github.com/vhnegrisoli/realtime_dashboard_socketio/blob/master/dashboard_rest_demo.gif)
 
-### Imagens do dashboard feito com Materialize CSS e Chart.js
+### Imagens do dashboard feito com Materialize CSS e Chart.js :chart:
 
 #### Cards (KPIs) de totais vendas finalizadas, abertas, aprovadas e rejeitadas, e gráfico com análise de vendas mensais
 
