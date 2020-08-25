@@ -42,6 +42,8 @@ Para instalar o projeto, execute o comando:
 
 `yarn`
 
+**Para rodar localmente, será necessário ter uma instância do MongoDB rodando em seu ambiente na porta 27017.**
+
 ##### Executando local :dvd:
 
 Para executar o projeto, rode o comando:
