@@ -88,6 +88,7 @@ class DashboardController {
     const controller = new DashboardController();
     return res.json({
       vendasMensais: await controller.buscarIndicadorVendasMensais(),
+      vendasMensaisPorValorVenda: await controller.buscarIndicadorVendasMensaisPorValorVenda(),
       vendasPorProdutos: await controller.buscarIndicadorVendasPorProdutos(),
       vendasPorFornecedores: await controller.buscarIndicadorVendasPorFornecedores(),
       vendasPorCategorias: await controller.buscarIndicadorVendasPorCategorias(),
@@ -115,6 +116,64 @@ class DashboardController {
       },
     ]);
     vendasMensais.forEach((venda) => {
+      if (venda._id === "01") {
+        venda._id = "Jan";
+      }
+      if (venda._id === "02") {
+        venda._id = "Fev";
+      }
+      if (venda._id === "03") {
+        venda._id = "Mar";
+      }
+      if (venda._id === "04") {
+        venda._id = "Abr";
+      }
+      if (venda._id === "05") {
+        venda._id = "Mai";
+      }
+      if (venda._id === "06") {
+        venda._id = "Jun";
+      }
+      if (venda._id === "07") {
+        venda._id = "Jul";
+      }
+      if (venda._id === "08") {
+        venda._id = "Ago";
+      }
+      if (venda._id === "09") {
+        venda._id = "Set";
+      }
+      if (venda._id === "10") {
+        venda._id = "Out";
+      }
+      if (venda._id === "11") {
+        venda._id = "Nov";
+      }
+      if (venda._id === "12") {
+        venda._id = "Dez";
+      }
+    });
+    return vendasMensais;
+  }
+
+  async buscarIndicadorVendasMensaisPorValorVenda() {
+    const vendasMensais = await Venda.aggregate([
+      {
+        $group: {
+          _id: {
+            $substr: ["$dataVenda", 5, 2],
+          },
+          valorTotal: { $sum: "$valorVenda" },
+        },
+      },
+      {
+        $sort: {
+          _id: 1,
+        },
+      },
+    ]);
+    vendasMensais.forEach((venda) => {
+      venda.valorTotal = venda.valorTotal.toFixed(2);
       if (venda._id === "01") {
         venda._id = "Jan";
       }
@@ -272,6 +331,7 @@ class DashboardController {
     const controller = new DashboardController();
     let values = {
       vendasMensais: await controller.buscarIndicadorVendasMensais(),
+      vendasMensaisPorValorVenda: await controller.buscarIndicadorVendasMensaisPorValorVenda(),
       vendasPorProdutos: await controller.buscarIndicadorVendasPorProdutos(),
       vendasPorFornecedores: await controller.buscarIndicadorVendasPorFornecedores(),
       vendasPorCategorias: await controller.buscarIndicadorVendasPorCategorias(),

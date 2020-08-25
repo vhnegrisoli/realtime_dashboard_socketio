@@ -66,6 +66,16 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col m12">
+                <div class="card col s12 center-align">
+                    <span class="card-title">Análise de vendas mensais por valor da venda</span>
+                    <div class="card-content">
+                        <canvas id="chart7" width="400" height="150"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col m6">
@@ -126,6 +136,7 @@
         var ctx4 = document.getElementById('chart4').getContext('2d');
         var ctx5 = document.getElementById('chart5').getContext('2d');
         var ctx6 = document.getElementById('chart6').getContext('2d');
+        var ctx7 = document.getElementById('chart7').getContext('2d');
         async function getTotais() {
             var totais = null;
             await axios
@@ -208,6 +219,14 @@
             data: dadosChart6,
             options: {}
         });
+
+        var dadosChart7 = definirDados(null, 'Vendas mensais por valor de venda', null)
+        var chart7 = new Chart(ctx7, {
+            type: 'line',
+            data: dadosChart7,
+            options: {}
+        });
+
         getIndicadores()
         async function getIndicadores() {
             await axios
@@ -242,6 +261,11 @@
                     dadosChart6.labels = Object.values(vendasPorAprovacoes).map(item => item._id)
                     dadosChart6.datasets[0].data = Object.values(vendasPorAprovacoes).map(item => item.count)
                     chart6.update()
+
+                    var vendasMensaisPorValorVenda = res.data.vendasMensaisPorValorVenda
+                    dadosChart7.labels = Object.values(vendasMensaisPorValorVenda).map(item => item._id)
+                    dadosChart7.datasets[0].data = Object.values(vendasMensaisPorValorVenda).map(item => item.valorTotal)
+                    chart7.update()
                 }).catch(error => {
                     return []
                 })
@@ -277,6 +301,11 @@
             dadosChart6.labels = Object.values(vendasPorSituacoes).map(item => item._id)
             dadosChart6.datasets[0].data = Object.values(vendasPorSituacoes).map(item => item.count)
             chart6.update()
+
+            var vendasMensaisPorValorVenda = value.vendasMensaisPorValorVenda
+            dadosChart7.labels = Object.values(vendasMensaisPorValorVenda).map(item => item._id)
+            dadosChart7.datasets[0].data = Object.values(vendasMensaisPorValorVenda).map(item => item.valorTotal)
+            chart7.update()
 
             document.getElementById('card1').innerHTML = value.cards.card1
             document.getElementById('card2').innerHTML = value.cards.card2
