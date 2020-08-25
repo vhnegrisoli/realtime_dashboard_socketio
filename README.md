@@ -69,6 +69,20 @@ a dashboard conforme o listener do Socket.io no front-end.
 
 ![Demonstração Dashboard API Call](https://github.com/vhnegrisoli/realtime_dashboard_socketio/blob/master/dashboard_rest_demo.gif)
 
+### Imagens do dashboard feito com Materialize CSS e Chart.js :chart:
+
+#### Cards (KPIs) de totais vendas finalizadas, abertas, aprovadas e rejeitadas, e gráfico com análise de vendas mensais
+
+![Dash 1](https://uploaddeimagens.com.br/images/002/847/585/full/dashboard_01.png?1598368140)
+
+#### Análise de vendas mensais por valor total de venda, total de vendas por produtos e fornecedores
+
+![Dash 2](https://uploaddeimagens.com.br/images/002/847/586/original/dashboard_02.png?1598368143)
+
+#### Análise de vendas por aprovações (ABERTA, FECHADA), por situações (APROVADA, REJEITADA e AGUARDANDO_APROVACAO) e vendas por produtos
+
+![Dash 3](https://uploaddeimagens.com.br/images/002/847/587/original/dashboard_03.png?1598368146)
+
 ### Autor :nerd_face:
 
 ### Victor Hugo Negrisoli
