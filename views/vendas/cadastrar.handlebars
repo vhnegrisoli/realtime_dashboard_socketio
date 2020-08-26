@@ -102,6 +102,7 @@
 
     var quantidadeSelecionada = 0.00
     var produtoSelecionado = 0.00
+    var
 
     function alterarProdutoValor() {
         produtoSelecionado = document.getElementById("produtoId").value.split("preco")[1];
@@ -116,7 +117,6 @@
     function alterarTotal() {
         document.getElementById("total").innerHTML = (quantidadeSelecionada * produtoSelecionado).toFixed(2);
     }
-
     async function save() {
         var object = {};
         new FormData(document.querySelector('form'))

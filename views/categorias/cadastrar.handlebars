@@ -16,46 +16,58 @@
         </div>
     </nav>
 
-    <ul id="slide-out" class="sidenav">
-        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-        <li><a href="#!">Second Link</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a class="subheader">Subheader</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-    </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-
     <div class="container">
         <div class="row">
             <div class="col s12">
                 <div class="card col s12">
-                    <div class="row">
-                        <form class="col s12" action="/categorias/salvar" method="post">
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <input placeholder="Descrição" id="descricao" name="descricao" required type="text"
-                                        class="validate">
-                                    <label for="first_name">Descrição</label>
-                                </div>
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Descrição" id="descricao" name="descricao" required type="text"
+                                    class="validate">
+                                <label for="first_name">Descrição</label>
                             </div>
-                            <div class="row col s12">
-                                <button class="btn waves-effect waves-light" id="button" type="submit" onclick="save()"
-                                    name="action">Salvar</button>
-                            </div>
-                            <div class="row col s12">
-                                <p id="error" />
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                        <div class="row col s12">
+                            <button class="btn waves-effect waves-light" id="button" type="submit" onclick="save()"
+                                name="action">Salvar</button>
+                        </div>
+                    </form>
                 </div>
+                <h6 style="color:green" id="success" />
+                <h6 style="color:red" id="error" />
             </div>
         </div>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
+    function isEdicao() {
+        var url = window.location.pathname.split('cadastrar/')[1]
+        return url !== null && url !== undefined;
+    }
+
+    function getId() {
+        if (isEdicao()) {
+            return window.location.pathname.split('cadastrar/')[1]
+        }
+    }
+
+    if (isEdicao()) {
+        getCategoria(getId())
+    }
+
+    async function getCategoria(id) {
+        axios.get(`/api/categoria/${id}`)
+            .then(res => {
+                document.getElementById("descricao").value = res.data.descricao;
+            })
+            .catch(error => {
+                document.getElementById('success').innerHTML = ''
+                document.getElementById('error').innerHTML = error.response.data.message
+            })
+    }
+
     document.getElementById("button").addEventListener("click", function (event) {
         event.preventDefault()
     });
@@ -66,14 +78,25 @@
                 object[key] = value;
             });
 
-        await axios.post('http://localhost:8080/api/categorias', object)
-            .then(data => {
-                document.location.href = 'http://localhost:8080/categorias/listar'
-            })
-            .catch(error => {
-                console.log('Erro ' + error.message)
-                document.getElementById('error').innerHTML = error.message
-            })
+        if (isEdicao()) {
+            await axios.put(`/api/categorias/${getId()}`, object)
+                .then(data => {
+                    window.location.href = '/categorias/listar'
+                })
+                .catch(error => {
+                    document.getElementById('success').innerHTML = ''
+                    document.getElementById('error').innerHTML = error.response.data.message
+                })
+        } else {
+            await axios.post('/api/categorias', object)
+                .then(data => {
+                    window.location.href = '/categorias/listar'
+                })
+                .catch(error => {
+                    document.getElementById('success').innerHTML = ''
+                    document.getElementById('error').innerHTML = error.response.data.message
+                })
+        }
     }
 </script>
 

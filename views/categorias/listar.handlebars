@@ -4,8 +4,6 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type=" text/javascript" src="js/materialize.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
@@ -15,17 +13,6 @@
             <a href="#" class="brand-logo">Lançar venda</a>
         </div>
     </nav>
-
-    <ul id="slide-out" class="sidenav">
-        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-        <li><a href="#!">Second Link</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a class="subheader">Subheader</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-    </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
     <div class="container">
         <div class="row">
@@ -37,6 +24,8 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Descrição</th>
+                                    <th>Editar</th>
+                                    <th>Remover</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -44,61 +33,39 @@
                                 <tr>
                                     <td>{{id}}</td>
                                     <td>{{descricao}}</td>
+                                    <td>
+                                        <button class="btn waves-effect waves-light"
+                                            onclick="window.location.href='/categorias/cadastrar/{{id}}';">
+                                            Editar</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn waves-effect waves-light"
+                                            onclick="removerCategoria('{{id}}')">
+                                            Remover</button>
+                                    </td>
                                 </tr>
                                 {{/categorias}}
                             </tbody>
                         </table>
                     </div>
                 </div>
+                <h6 style="color:red" id="error" />
             </div>
-        </div>
-        <div class="fixed-action-btn">
-            <a ref="#" class="btn-floating red btn-large">
-                <i class="large material-icons">mode_edit</i>
-            </a>
-            <ul>
-                <li><a ref="#" class="btn-floating blue btn-large"><i class="large material-icons">insert_chart</i></a>
-                </li>
-                <li><a ref="#" class="btn-floating green btn-large"><i
-                            class="large material-icons">format_quotes</i></a></li>
-                <li><a ref="#" class="btn-floating yellow btn-large"><i class="large material-icons">publish</i></a>
-                </li>
-                <li><a ref="#" class="btn-floating orange btn-large"><i class="large material-icons">attach_file</i></a>
-                </li>
-            </ul>
         </div>
     </div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type=" text/javascript" src="/public/js/materialize.min.js"></script>
 <script>
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems, options);
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.fixed-action-btn');
-        var instances = M.FloatingActionButton.init(elems, options);
-    });
-
-    document.getElementById("button").addEventListener("click", function (event) {
-        event.preventDefault()
-    });
-    async function updateData() {
-        var object = {};
-        new FormData(document.querySelector('form'))
-            .forEach(function (value, key) {
-                object[key] = value;
-            });
-        await axios.post('http://localhost:8080/novos-dados', JSON.stringify(object))
+    async function removerCategoria(id) {
+        await axios.delete(`/api/categorias/${id}`)
             .then(data => {
-                document.location.href = 'http://localhost:8080/dashboard'
+                location.reload();
             })
             .catch(error => {
-                console.log('Erro no request')
-                console.log(error)
+                document.getElementById('error').innerHTML = error.response.data.message
             })
     }
 </script>
