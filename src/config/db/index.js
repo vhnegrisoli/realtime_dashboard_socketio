@@ -7,6 +7,7 @@ export function connect() {
   mongoose.connect(url.MONGO_DB_CONNECTION, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindAndModify: false,
   });
   mongoose.connection.on("connected", function () {
     console.log("Conecatdo ao MongoDB");

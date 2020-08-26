@@ -10,7 +10,7 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Lançar venda</a>
+            <a href="#" class="brand-logo">Listar categorias</a>
         </div>
     </nav>
 
@@ -28,7 +28,7 @@
                                     <th>Remover</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="tabela">
                                 {{#categorias}}
                                 <tr>
                                     <td>{{id}}</td>
@@ -39,13 +39,27 @@
                                             Editar</button>
                                     </td>
                                     <td>
-                                        <button class="btn waves-effect waves-light"
+                                        <button class="btn-flat waves-effect waves-light red"
                                             onclick="removerCategoria('{{id}}')">
                                             Remover</button>
+
                                     </td>
                                 </tr>
                                 {{/categorias}}
                             </tbody>
+                            <div id="loading" class="preloader-wrapper big active">
+                                <div class="spinner-layer spinner-blue-only">
+                                    <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="gap-patch">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </table>
                     </div>
                 </div>
@@ -59,7 +73,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script type=" text/javascript" src="/public/js/materialize.min.js"></script>
 <script>
+    document.getElementById('loading').style.display = "none";
     async function removerCategoria(id) {
+        document.getElementById('tabela').style.display = "none";
+        document.getElementById('loading').style.display = "block";
         await axios.delete(`/api/categorias/${id}`)
             .then(data => {
                 location.reload();
@@ -67,6 +84,8 @@
             .catch(error => {
                 document.getElementById('error').innerHTML = error.response.data.message
             })
+        document.getElementById('loading').style.display = "none";
+        document.getElementById('tabela').style.display = "block";
     }
 </script>
 

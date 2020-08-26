@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.engine("handlebars", handlebars({ defaultLayout: false }));
 app.set("view engine", "handlebars");
-app.use(express.static("public"));
+app.use(express.static("."));
 app.use(dashboard);
 app.use(categorias);
 app.use(vendas);
