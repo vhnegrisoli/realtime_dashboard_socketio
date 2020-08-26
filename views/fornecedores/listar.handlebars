@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Listar fornecedores</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="card col s12">
+                    <div class="row">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Razão Social</th>
+                                    <th>CNPJ</th>
+                                    <th>Editar</th>
+                                    <th>Remover</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabela">
+                                {{#fornecedores}}
+                                <tr>
+                                    <td>{{id}}</td>
+                                    <td>{{razaoSocial}}</td>
+                                    <td>{{cnpj}}</td>
+                                    <td>
+                                        <button class="btn waves-effect waves-light"
+                                            onclick="window.location.href='/fornecedores/cadastrar/{{id}}';">
+                                            Editar</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn-flat waves-effect waves-light red"
+                                            onclick="removerFornecedor('{{id}}')">
+                                            Remover</button>
+
+                                    </td>
+                                </tr>
+                                {{/fornecedores}}
+                            </tbody>
+                            <div id="loading" class="preloader-wrapper big active">
+                                <div class="spinner-layer spinner-blue-only">
+                                    <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="gap-patch">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </table>
+                    </div>
+                </div>
+                <h6 style="color:red" id="error" />
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type=" text/javascript" src="/public/js/materialize.min.js"></script>
+<script>
+    document.getElementById('loading').style.display = "none";
+    async function removerFornecedor(id) {
+        document.getElementById('tabela').style.display = "none";
+        document.getElementById('loading').style.display = "block";
+        await axios.delete(`/api/fornecedores/${id}`)
+            .then(data => {
+                location.reload();
+            })
+            .catch(error => {
+                document.getElementById('error').innerHTML = error.response.data.message
+            })
+        document.getElementById('loading').style.display = "none";
+        document.getElementById('tabela').style.display = "block";
+    }
+</script>
+
+</html>

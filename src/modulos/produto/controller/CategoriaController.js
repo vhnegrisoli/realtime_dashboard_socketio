@@ -74,7 +74,7 @@ class CategoriaController {
     if (
       categoriaDescricao &&
       descricao === categoriaDescricao.descricao &&
-      String(id) === String(categoriaDescricao._id)
+      String(id) !== String(categoriaDescricao._id)
     ) {
       return res
         .status(400)
