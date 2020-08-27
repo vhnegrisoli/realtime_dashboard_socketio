@@ -244,6 +244,15 @@ class DashboardController {
     return res.render("dashboard");
   }
 
+  async reiniciarDados(req, res) {
+    const controller = new DashboardController();
+    const dados = controller.recuperarArquivoJson(res);
+    await controller.removerCollectionsSeExistirem();
+    await controller.inserirDadosIniciaisNasCollections(dados);
+    await controller.atualizarDados();
+    return res.render("dashboard");
+  }
+
   async _atualizarDados(req, res) {
     const { _ids, data } = req.body;
     const controller = new DashboardController();

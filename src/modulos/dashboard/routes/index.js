@@ -8,6 +8,7 @@ const controller = DashboardController;
 
 router.get("/", controller.redirecionarParaDashboard);
 router.get("/dashboard", controller.iniciarDashboard);
+router.get("/reiniciar-dados", controller.reiniciarDados);
 router.post("/atualizar-dados", controller._atualizarDados);
 router.post("/novos-dados", controller.novosDados);
 router.post(
