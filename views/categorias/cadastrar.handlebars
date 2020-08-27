@@ -12,10 +12,40 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Cadastrar categorias</a>
+            <a href="#" class="brand-logo center">Cadastrar categorias</a>
         </div>
     </nav>
-
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul id="slide-out" class="sidenav">
+        <li><a href="/dashboard"><i class="material-icons">insert_chart</i>Dashboard</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader">Venda</a></li>
+        <li><a href="/vendas/cadastrar" class="waves-effect"><i class="material-icons">attach_money</i>Nova venda</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader">Produtos</a></li>
+        <li><a href="/produtos/cadastrar" class="waves-effect">Cadastrar</a></li>
+        <li><a href="/produtos/listar" class="waves-effect"><i class="material-icons">format_list_numbered</i>Listar</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader">Fornecedores</a></li>
+        <li><a href="/fornecedores/cadastrar" class="waves-effect">Cadastrar</a></li>
+        <li><a href="/fornecedores/listar" class="waves-effect"><i
+                    class="material-icons">format_list_numbered</i>Listar</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader">Categorias</a></li>
+        <li><a href="/categorias/cadastrar" class="waves-effect">Cadastrar</a></li>
+        <li><a href="/categorias/listar" class="waves-effect"><i
+                    class="material-icons">format_list_numbered</i>Listar</a></li>
+    </ul>
     <div class="container">
         <div class="row">
             <div class="col s12">
@@ -55,6 +85,11 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, null);
+    });
+
     document.getElementById('loading').style.display = "none";
     function isEdicao() {
         var url = window.location.pathname.split('cadastrar/')[1]
