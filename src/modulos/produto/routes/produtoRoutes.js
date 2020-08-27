@@ -15,5 +15,6 @@ router.get("/api/produtos", ProdutoController.buscarTodos);
 router.get("/api/produto/:id", ProdutoController.buscarProduto);
 router.post("/api/produtos", ProdutoController.salvarProduto);
 router.put("/api/produtos/:id", ProdutoController.editarProduto);
+router.delete("/api/produtos/:id", ProdutoController.removerProduto);
 
 export default router;

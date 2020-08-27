@@ -93,9 +93,9 @@ class ProdutoController {
       }
       await Produto.create({
         produto: produto,
-        categoria: categoria.descricao,
-        fornecedorRazaoSocial: fornecedor.razaoSocial,
-        fornecedorCnpj: fornecedor.cnpj,
+        categoria: categoriaExistente.descricao,
+        fornecedorRazaoSocial: fornecedorExistente.razaoSocial,
+        fornecedorCnpj: fornecedorExistente.cnpj,
         valorVenda,
       });
       return res.json({ message: "O produto foi inserido com sucesso!" });
@@ -148,17 +148,33 @@ class ProdutoController {
       }
       produtoExistente.produto = produto;
       produtoExistente.valorVenda = valorVenda;
-      produtoExistente.categoria = categoria.descricao;
-      produtoExistente.fornecedorCnpj = fornecedor.cnpj;
-      produtoExistente.fornecedorRazaoSocial = fornecedor.razaoSocial;
+      produtoExistente.categoria = categoriaExistente.descricao;
+      produtoExistente.fornecedorCnpj = fornecedorExistente.cnpj;
+      produtoExistente.fornecedorRazaoSocial = fornecedorExistente.razaoSocial;
 
-      await produto.save();
+      await produtoExistente.save();
       return res.json({ message: "O produto foi atualizado com sucesso!" });
     } catch (error) {
       console.log(error);
       return res
         .status(400)
         .json({ message: "Houve um erro ao atualizar o produto." });
+    }
+  }
+
+  async removerProduto(req, res) {
+    const { id } = req.params;
+    if (!id) {
+      return res.status(400).json({ message: "O id é obrigatório." });
+    }
+    try {
+      await Produto.findByIdAndRemove(id);
+      return res.json("O produto foi removido com sucesso!");
+    } catch (error) {
+      console.log(error);
+      return res
+        .status(400)
+        .json({ message: "Houve um erro ao remover o produto." });
     }
   }
 }

@@ -10,7 +10,7 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Listar fornecedores</a>
+            <a href="#" class="brand-logo">Listar produtos</a>
         </div>
     </nav>
 
@@ -40,12 +40,12 @@
                                 <td>{{razaoSocialCnpj}}</td>
                                 <td>
                                     <button class="btn waves-effect waves-light"
-                                        onclick="window.location.href='/fornecedores/cadastrar/{{id}}';">
+                                        onclick="window.location.href='/produtos/cadastrar/{{id}}';">
                                         Editar</button>
                                 </td>
                                 <td>
                                     <button class="btn-flat waves-effect waves-light red"
-                                        onclick="removerFornecedor('{{id}}')">
+                                        onclick="removerProduto('{{id}}')">
                                         Remover</button>
 
                                 </td>
@@ -78,10 +78,10 @@
 <script type=" text/javascript" src="/public/js/materialize.min.js"></script>
 <script>
     document.getElementById('loading').style.display = "none";
-    async function removerFornecedor(id) {
+    async function removerProduto(id) {
         document.getElementById('tabela').style.display = "none";
         document.getElementById('loading').style.display = "block";
-        await axios.delete(`/api/fornecedores/${id}`)
+        await axios.delete(`/api/produtos/${id}`)
             .then(data => {
                 location.reload();
             })
