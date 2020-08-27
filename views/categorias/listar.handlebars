@@ -4,16 +4,56 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/public/css/menu.css">
+    <script type=" text/javascript" src="/public/js/materialize.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
     <nav>
+        <a href="#" data-target="slide-out" class="sidenav-trigger left-align">
+            <i class="material-icons">menu</i>
+        </a>
         <div class="nav-wrapper">
             <a href="#" class="brand-logo">Listar categorias</a>
         </div>
     </nav>
+    <ul id="slide-out" class="sidenav">
+        <li><a href="/dashboard"><i class="material-icons">insert_chart</i>Dashboard</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader">Venda</a></li>
+        <li><a href="/vendas/cadastrar" class="waves-effect"><i class="material-icons">add_shopping_cart</i>Nova
+                venda</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader"><i class="material-icons">shopping_bag</i>Produtos</a></li>
+        <li><a href="/produtos/cadastrar" class="waves-effect"><i class="material-icons">add_box</i>Cadastrar</a></li>
+        <li><a href="/produtos/listar" class="waves-effect"><i class="material-icons">format_list_numbered</i>Listar</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader"><i class="material-icons">business_center</i>Fornecedores</a></li>
+        <li><a href="/fornecedores/cadastrar" class="waves-effect"><i class="material-icons">add_box</i>Cadastrar</a>
+        </li>
+        <li><a href="/fornecedores/listar" class="waves-effect"><i
+                    class="material-icons">format_list_numbered</i>Listar</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader"><i class="material-icons">label</i>Categorias</a></li>
+        <li><a href="/categorias/cadastrar" class="waves-effect"><i class="material-icons">add_box</i>Cadastrar</a></li>
+        <li><a href="/categorias/listar" class="waves-effect"><i
+                    class="material-icons">format_list_numbered</i>Listar</a>
+        </li>
+    </ul>
 
+    <br />
     <div class="container">
         <div class="row">
             <div class="col s12">
@@ -73,6 +113,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script type=" text/javascript" src="/public/js/materialize.min.js"></script>
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, null);
+    });
+
     document.getElementById('loading').style.display = "none";
     async function removerCategoria(id) {
         document.getElementById('tabela').style.display = "none";
