@@ -5,8 +5,9 @@
   "author": "Victor Hugo Negrisoli",
   "license": "MIT",
   "scripts": {
-    "start": "set NODE_ENV=dev&& nodemon app.js",
-    "startContainer": "nodemon app.js"
+    "startLocal": "set NODE_ENV=dev&& nodemon app.js",
+    "startContainer": "nodemon app.js",
+    "start": "set NODE_ENV=production&& sucrase-node app.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
