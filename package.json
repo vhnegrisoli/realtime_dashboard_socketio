@@ -1,13 +1,14 @@
 {
   "name": "socketio_dashboard",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "author": "Victor Hugo Negrisoli",
   "license": "MIT",
   "scripts": {
     "startLocal": "set NODE_ENV=dev&& nodemon app.js",
     "startContainer": "nodemon app.js",
-    "start": "set NODE_ENV=production&& sucrase-node app.js"
+    "start": "set NODE_ENV=production&& sucrase-node app.js",
+    "heroku-prebuild": "yarn"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
