@@ -3,13 +3,13 @@ import http from "http";
 import cors from "cors";
 import handlebars from "express-handlebars";
 
-import * as socketConfig from "./src/config/socket/index";
-import * as db from "./src/config/db/index";
-import dashboard from "./src/modulos/dashboard/routes/index";
-import categorias from "./src/modulos/produto/routes/categoriaRoutes";
-import fornecedores from "./src/modulos/produto/routes/fornecedorRoutes";
-import produtos from "./src/modulos/produto/routes/produtoRoutes";
-import vendas from "./src/modulos/venda/routes/index";
+import * as socketConfig from "./config/socket/index";
+import * as db from "./config/db/index";
+import dashboard from "./modulos/dashboard/routes/index";
+import categorias from "./modulos/produto/routes/categoriaRoutes";
+import fornecedores from "./modulos/produto/routes/fornecedorRoutes";
+import produtos from "./modulos/produto/routes/produtoRoutes";
+import vendas from "./modulos/venda/routes/index";
 
 const app = express();
 const server = http.Server(app);
