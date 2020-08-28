@@ -44,7 +44,9 @@ Para instalar o projeto, execute o comando:
 
 **Para rodar localmente, será necessário ter uma instância do MongoDB rodando em seu ambiente na porta 27017.**
 
-##### Executando local :dvd:
+### Execução :dvd:
+
+##### Executando local
 
 Para executar o projeto, rode o comando:
 
@@ -61,6 +63,12 @@ Para parar os containers, apenas execute o comando:
 `docker-compose stop`
 
 O projeto estará disponível no endereço: `http://localhost:8080`.
+
+### Deployment :star::collision::+1::punch:
+
+Foi feito o deploy do projeto na plataforma `Heroku`, e pode ser acessado na URL abaixo:
+
+https://socketio-dashboard-realtime.herokuapp.com/dashboard
 
 ### Demonstração :desktop_computer:
 
