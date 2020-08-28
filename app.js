@@ -2,7 +2,6 @@ import express from "express";
 import http from "http";
 import cors from "cors";
 import handlebars from "express-handlebars";
-import bodyParser from "body-parser";
 
 import * as socketConfig from "./src/config/socket/index";
 import * as db from "./src/config/db/index";
@@ -19,7 +18,7 @@ socketConfig.connect(server);
 db.connect();
 
 app.use(express.json());
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 app.use(cors());
 app.engine("handlebars", handlebars({ defaultLayout: false }));
 app.set("view engine", "handlebars");

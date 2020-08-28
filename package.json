@@ -5,12 +5,13 @@
   "author": "Victor Hugo Negrisoli",
   "license": "MIT",
   "scripts": {
+    "build": "mkdir dist && sucrase ./ --transforms imports -d ./dist",
     "startLocal": "set NODE_ENV=dev&& nodemon app.js",
     "startContainer": "nodemon app.js",
-    "start": "set NODE_ENV=production&& sucrase-node app.js"
+    "start": "set NODE_ENV=prod&& node dist/app.js",
+    "heroku-prebuild": "rm -rf node_modules && rm -rf yarn.lock && yarn"
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
