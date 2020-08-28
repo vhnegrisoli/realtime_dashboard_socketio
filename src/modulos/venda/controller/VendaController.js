@@ -2,7 +2,7 @@ import * as io from "../../../config/socket/index";
 
 import Venda from "../model/Venda";
 import Produto from "../../produto/model/Produto";
-import DashboardController from "../../dashboard/controller/DashboardController";
+import DashboardController from "../../dashboard/controller/dashboardController";
 
 class VendaController {
   async buscarTodas(req, res) {

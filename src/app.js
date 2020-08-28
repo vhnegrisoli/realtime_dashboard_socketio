@@ -18,7 +18,6 @@ socketConfig.connect(server);
 db.connect();
 
 app.use(express.json());
-//app.use(bodyParser.json());
 app.use(cors());
 app.engine("handlebars", handlebars({ defaultLayout: false }));
 app.set("view engine", "handlebars");

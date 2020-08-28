@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import DashboardController from "../controller/DashboardController";
+import DashboardController from "../controller/dashboardController";
 
 const router = new Router();
 
