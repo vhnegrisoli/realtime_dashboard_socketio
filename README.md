@@ -68,7 +68,7 @@ O projeto estará disponível no endereço: `http://localhost:8080`.
 
 Foi feito o deploy do projeto na plataforma `Heroku`, e pode ser acessado na URL abaixo:
 
-https://socketio-dashboard-realtime.herokuapp.com/dashboard
+https://socketio-dashboard-realtime.herokuapp.com
 
 ### Demonstração :desktop_computer:
 
