@@ -64,50 +64,20 @@
             <div class="col s12">
                 <div class="card col s12">
                     <div class="row">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Razão Social</th>
-                                    <th>CNPJ</th>
-                                    <th>Editar</th>
-                                    <th>Remover</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tabela">
-                                {{#fornecedores}}
-                                <tr>
-                                    <td>{{id}}</td>
-                                    <td>{{razaoSocial}}</td>
-                                    <td>{{cnpj}}</td>
-                                    <td>
-                                        <button class="btn waves-effect waves-light"
-                                            onclick="window.location.href='/fornecedores/cadastrar/{{id}}';">
-                                            <i class="material-icons">edit</i></button>
-                                    </td>
-                                    <td>
-                                        <button class="btn-flat waves-effect waves-light red"
-                                            onclick="removerFornecedor('{{id}}')">
-                                            <i class="material-icons">delete</i></button>
-
-                                    </td>
-                                </tr>
-                                {{/fornecedores}}
-                            </tbody>
-                            <div id="loading" class="preloader-wrapper big active">
-                                <div class="spinner-layer spinner-blue-only">
-                                    <div class="circle-clipper left">
-                                        <div class="circle"></div>
-                                    </div>
-                                    <div class="gap-patch">
-                                        <div class="circle"></div>
-                                    </div>
-                                    <div class="circle-clipper right">
-                                        <div class="circle"></div>
-                                    </div>
+                        <table class="responsive-table" id="tabela" />
+                        <div id="loading" class="preloader-wrapper big active">
+                            <div class="spinner-layer spinner-blue-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                    <div class="circle"></div>
                                 </div>
                             </div>
-                        </table>
+                        </div>
                     </div>
                 </div>
                 <h6 style="color:red" id="error" />
@@ -125,9 +95,54 @@
         var instances = M.Sidenav.init(elems, null);
     });
 
+    getFornecedores()
+
+    async function getFornecedores() {
+        var dados = `
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Razão Social</th>
+                    <th>CNPJ</th>
+                    <th>Editar</th>
+                    <th>Remover</th>
+                </tr>
+            </thead>
+            <tbody>
+        `
+        await axios.get('/api/fornecedores')
+            .then(data => {
+                data.data.forEach(fornecedor => {
+                    dados = dados + `
+                        <tr>
+                            <td>${fornecedor._id}</td>
+                            <td>${fornecedor.razaoSocial}</td>
+                            <td>${fornecedor.cnpj}</td>
+                            <td>
+                                <button class="btn waves-effect waves-light"
+                                    onclick="window.location.href='/fornecedores/cadastrar/${fornecedor._id}';">
+                                    <i class="material-icons">edit</i></button>
+                            </td>
+                            <td>
+                                <button class="btn-flat waves-effect waves-light red"
+                                    onclick="removerFornecedor('${fornecedor._id}')">
+                                    <i class="material-icons">delete</i></button>
+                            </td>
+                        </tr>
+                    `
+                })
+                dados = dados + `</tbody>`
+                document.getElementById('tabela').innerHTML = dados
+            })
+            .catch(error => {
+                console.log(error)
+                document.getElementById('error').innerHTML = error.response.data.message
+            })
+        document.getElementById('loading').style.display = "none";
+    }
+
     document.getElementById('loading').style.display = "none";
     async function removerFornecedor(id) {
-        document.getElementById('tabela').style.display = "none";
         document.getElementById('loading').style.display = "block";
         await axios.delete(`/api/fornecedores/${id}`)
             .then(data => {
@@ -137,7 +152,6 @@
                 document.getElementById('error').innerHTML = error.response.data.message
             })
         document.getElementById('loading').style.display = "none";
-        document.getElementById('tabela').style.display = "block";
     }
 </script>
 

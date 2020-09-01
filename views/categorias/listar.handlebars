@@ -64,53 +64,26 @@
             <div class="col s12">
                 <div class="card col s12">
                     <div class="row">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Descrição</th>
-                                    <th>Editar</th>
-                                    <th>Remover</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tabela">
-                                {{#categorias}}
-                                <tr>
-                                    <td>{{id}}</td>
-                                    <td>{{descricao}}</td>
-                                    <td>
-                                        <button class="btn waves-effect waves-light"
-                                            onclick="window.location.href='/categorias/cadastrar/{{id}}';">
-                                            <i class="material-icons">edit</i></button>
-                                    </td>
-                                    <td>
-                                        <button class="btn-flat waves-effect waves-light red"
-                                            onclick="removerCategoria('{{id}}')">
-                                            <i class="material-icons">delete</i></button>
-
-                                    </td>
-                                </tr>
-                                {{/categorias}}
-                            </tbody>
-                            <div id="loading" class="preloader-wrapper big active">
-                                <div class="spinner-layer spinner-blue-only">
-                                    <div class="circle-clipper left">
-                                        <div class="circle"></div>
-                                    </div>
-                                    <div class="gap-patch">
-                                        <div class="circle"></div>
-                                    </div>
-                                    <div class="circle-clipper right">
-                                        <div class="circle"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </table>
+                        <table class="responsive-table" id="tabela" />
                     </div>
                 </div>
-                <h6 style="color:red" id="error" />
+                <div id="loading" class="preloader-wrapper big active">
+                    <div class="spinner-layer spinner-blue-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <h6 style="color:red" id="error" />
         </div>
+    </div>
     </div>
 
 </body>
@@ -122,6 +95,51 @@
         var elems = document.querySelectorAll('.sidenav');
         var instances = M.Sidenav.init(elems, null);
     });
+
+    document.getElementById('loading').style.display = "block";
+    getCategorias()
+
+    async function getCategorias() {
+        var dados = `
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descrição</th>
+                    <th>Editar</th>
+                    <th>Remover</th>
+                </tr>
+            </thead>
+            <tbody>
+        `
+        await axios.get('/api/categorias')
+            .then(data => {
+                data.data.forEach(categoria => {
+                    dados = dados + `
+                        <tr>
+                            <td>${categoria._id}</td>
+                            <td>${categoria.descricao}</td>
+                            <td>
+                                <button class="btn waves-effect waves-light"
+                                    onclick="window.location.href='/categorias/cadastrar/${categoria._id}';">
+                                    <i class="material-icons">edit</i></button>
+                            </td>
+                            <td>
+                                <button class="btn-flat waves-effect waves-light red"
+                                    onclick="removerCategoria('${categoria._id}')">
+                                    <i class="material-icons">delete</i></button>
+                            </td>
+                        </tr>
+                    `
+                })
+                dados = dados + `</tbody>`
+                document.getElementById('tabela').innerHTML = dados
+            })
+            .catch(error => {
+                console.log(error)
+                document.getElementById('error').innerHTML = error.response.data.message
+            })
+        document.getElementById('loading').style.display = "none";
+    }
 
     document.getElementById('loading').style.display = "none";
     async function removerCategoria(id) {

@@ -25,7 +25,7 @@ class FornecedorController {
     return res.json(fornecedores);
   }
 
-  async buscarTodos(req, res) {
+  async buscarPorId(req, res) {
     const { id } = req.params;
     if (!id) {
       return res.status(400).json({

@@ -62,54 +62,20 @@
         <div class="row">
             <div class="card col s12">
                 <div class="row">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Descrição</th>
-                                <th>Preço</th>
-                                <th>Categoria</th>
-                                <th>Fornecedor</th>
-                                <th>Editar</th>
-                                <th>Remover</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabela">
-                            {{#produtos}}
-                            <tr>
-                                <td>{{id}}</td>
-                                <td>{{produto}}</td>
-                                <td>{{preco}}</td>
-                                <td>{{categoria}}</td>
-                                <td>{{razaoSocialCnpj}}</td>
-                                <td>
-                                    <button class="btn waves-effect waves-light"
-                                        onclick="window.location.href='/produtos/cadastrar/{{id}}';">
-                                        <i class="material-icons">edit</i></button>
-                                </td>
-                                <td>
-                                    <button class="btn-flat waves-effect waves-light red"
-                                        onclick="removerProduto('{{id}}')">
-                                        <i class="material-icons">delete</i></button>
-
-                                </td>
-                            </tr>
-                            {{/produtos}}
-                        </tbody>
-                        <div id="loading" class="preloader-wrapper big active">
-                            <div class="spinner-layer spinner-blue-only">
-                                <div class="circle-clipper left">
-                                    <div class="circle"></div>
-                                </div>
-                                <div class="gap-patch">
-                                    <div class="circle"></div>
-                                </div>
-                                <div class="circle-clipper right">
-                                    <div class="circle"></div>
-                                </div>
+                    <table class="responsive-table" id="tabela" />
+                    <div id="loading" class="preloader-wrapper big active">
+                        <div class="spinner-layer spinner-blue-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
                             </div>
                         </div>
-                    </table>
+                    </div>
                 </div>
             </div>
             <h6 style="color:red" id="error" />
@@ -126,9 +92,59 @@
         var instances = M.Sidenav.init(elems, null);
     });
 
+    getProdutos()
+
+    async function getProdutos() {
+        var dados = `
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Categoria</th>
+                    <th>Fornecedor</th>
+                    <th>Editar</th>
+                    <th>Remover</th>
+                </tr>
+            </thead>
+            <tbody>
+        `
+        await axios.get('/api/produtos')
+            .then(data => {
+                data.data.forEach(produto => {
+                    dados = dados + `
+                        <tr>
+                            <td>${produto._id}</td>
+                            <td>${produto.produto}</td>
+                            <td>R$${produto.valorVenda.toFixed(2)}</td>
+                            <td>${produto.categoria}</td>
+                            <td>${produto.fornecedorRazaoSocial} | ${produto.fornecedorCnpj}</td>
+                            <td>
+                                <button class="btn waves-effect waves-light"
+                                    onclick="window.location.href='/produtos/cadastrar/${produto._id}';">
+                                    <i class="material-icons">edit</i></button>
+                            </td>
+                            <td>
+                                <button class="btn-flat waves-effect waves-light red"
+                                    onclick="removerProduto('${produto._id}')">
+                                    <i class="material-icons">delete</i></button>
+                            </td>
+                        </tr>
+                    `
+                })
+                dados = dados + `</tbody>`
+                document.getElementById('tabela').innerHTML = dados
+            })
+            .catch(error => {
+                console.log(error)
+                document.getElementById('error').innerHTML = error.response.data.message
+            })
+        document.getElementById('loading').style.display = "none";
+    }
+
     document.getElementById('loading').style.display = "none";
+
     async function removerProduto(id) {
-        document.getElementById('tabela').style.display = "none";
         document.getElementById('loading').style.display = "block";
         await axios.delete(`/api/produtos/${id}`)
             .then(data => {
@@ -138,7 +154,6 @@
                 document.getElementById('error').innerHTML = error.response.data.message
             })
         document.getElementById('loading').style.display = "none";
-        document.getElementById('tabela').style.display = "block";
     }
 </script>
 
