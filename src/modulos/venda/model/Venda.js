@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 const model = mongoose.model;
@@ -13,6 +13,7 @@ const VendaSchema = new Schema({
   dataVenda: Date,
   situacao: String,
   aprovacao: String,
+  usuarioId: mongoose.ObjectId,
 });
 
-module.exports = model("Venda", VendaSchema);
+module.exports = model('Venda', VendaSchema);

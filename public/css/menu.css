@@ -1,3 +1,8 @@
 nav a.sidenav-trigger {
   display: block;
 }
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}

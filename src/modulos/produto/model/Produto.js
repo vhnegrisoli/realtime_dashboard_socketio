@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 const model = mongoose.model;
@@ -9,6 +9,7 @@ const ProdutoSchema = new Schema({
   fornecedorRazaoSocial: String,
   fornecedorCnpj: String,
   valorVenda: Number,
+  usuarioId: mongoose.ObjectId,
 });
 
-module.exports = model("Produto", ProdutoSchema);
+module.exports = model('Produto', ProdutoSchema);

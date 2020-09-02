@@ -65,7 +65,7 @@
         <div class="row">
             <div class="col m3">
                 <div class="card col s12 center-align">
-                    <span class="card-title">Vendas finalizadas</span>
+                    <span class="card-title">Finalizadas</span>
                     <div class="card-content">
                         <h5 id="card1" />
                     </div>
@@ -74,7 +74,7 @@
 
             <div class="col m3">
                 <div class="card col s12 center-align">
-                    <span class="card-title">Vendas abertas</span>
+                    <span class="card-title">Abertas</span>
                     <div class="card-content">
                         <h5 id="card2" />
                     </div>
@@ -83,16 +83,15 @@
 
             <div class="col m3">
                 <div class="card col s12 center-align">
-                    <span class="card-title">Vendas aprovadas</span>
+                    <span class="card-title">Aprovadas</span>
                     <div class="card-content">
                         <h5 id="card3" />
                     </div>
                 </div>
             </div>
-
             <div class="col m3">
                 <div class="card col s12 center-align">
-                    <span class="card-title">Venda rejeitadas</span>
+                    <span class="card-title">Rejeitadas</span>
                     <div class="card-content">
                         <h5 id="card4" />
                     </div>
@@ -171,6 +170,9 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
+
+        var token = localStorage.getItem('token')
+
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems, null);
@@ -188,11 +190,12 @@
         async function getTotais() {
             var totais = null;
             await axios
-                .get('/api/dashboard/cards')
+                .get('/api/dashboard/cards', { headers: { authorization: `Bearer ${token}` } })
                 .then(res => {
                     totais = res.data
                 })
                 .catch(error => {
+                    window.location.href = '/login'
                     totais = {
                         card1: 0,
                         card2: 0,
@@ -278,7 +281,7 @@
         getIndicadores()
         async function getIndicadores() {
             await axios
-                .get('/api/dashboard/indicadores')
+                .get('/api/dashboard/indicadores', { headers: { authorization: `Bearer ${token}` } })
                 .then(res => {
                     var vendasMensais = res.data.vendasMensais
                     dadosChart1.labels = Object.values(vendasMensais).map(item => item._id)
@@ -315,7 +318,7 @@
                     dadosChart7.datasets[0].data = Object.values(vendasMensaisPorValorVenda).map(item => item.value)
                     chart7.update()
                 }).catch(error => {
-                    return []
+                    window.location.href = '/login'
                 })
         }
 
