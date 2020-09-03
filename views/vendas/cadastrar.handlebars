@@ -188,7 +188,7 @@
         object.produtoId = object.produtoId.split("preco")[0]
         document.getElementById('button').style.display = "none";
         document.getElementById('loading').style.display = "block";
-        await axios.post('/api/vendas', object)
+        await axios.post('/api/vendas', object, { headers: { authorization: `Bearer ${token}` } })
             .then(data => {
                 console.log(data.data)
                 document.getElementById('error').innerHTML = ''

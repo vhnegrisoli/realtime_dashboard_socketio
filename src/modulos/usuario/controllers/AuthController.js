@@ -14,9 +14,9 @@ class AuthController {
         return res.status(400).json({ message: 'O email ' + email + ' não foi encontrado.' });
       }
       if (await bcrypt.compare(senha, usuario.senha)) {
-        const { id, email, nome } = usuario;
+        const { id, email, nome, permissoes } = usuario;
         return res.json(
-          jwt.sign({ authUser: { id, email, nome } }, auth.apiKey, {
+          jwt.sign({ authUser: { id, email, nome, permissoes } }, auth.apiKey, {
             expiresIn: '1d',
           }),
         );

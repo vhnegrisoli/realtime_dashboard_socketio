@@ -97,6 +97,8 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
+    var token = localStorage.getItem('token');
+
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.sidenav');
         var instances = M.Sidenav.init(elems, null);
@@ -119,7 +121,7 @@
     }
 
     async function getCategoria(id) {
-        axios.get(`/api/categoria/${id}`)
+        axios.get(`/api/categoria/${id}`, { headers: { authorization: `Bearer ${token}` } })
             .then(res => {
                 document.getElementById("descricao").value = res.data.descricao;
             })
@@ -142,7 +144,7 @@
             });
 
         if (isEdicao()) {
-            await axios.put(`/api/categorias/${getId()}`, object)
+            await axios.put(`/api/categorias/${getId()}`, object, { headers: { authorization: `Bearer ${token}` } })
                 .then(data => {
                     window.location.href = '/categorias/listar'
                 })
@@ -151,7 +153,7 @@
                     document.getElementById('error').innerHTML = error.response.data.message
                 })
         } else {
-            await axios.post('/api/categorias', object)
+            await axios.post('/api/categorias', object, { headers: { authorization: `Bearer ${token}` } })
                 .then(data => {
                     window.location.href = '/categorias/listar'
                 })

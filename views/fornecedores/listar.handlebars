@@ -90,6 +90,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script type=" text/javascript" src="/public/js/materialize.min.js"></script>
 <script>
+    var token = localStorage.getItem('token');
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.sidenav');
         var instances = M.Sidenav.init(elems, null);
@@ -110,7 +111,7 @@
             </thead>
             <tbody>
         `
-        await axios.get('/api/fornecedores')
+        await axios.get('/api/fornecedores', { headers: { authorization: `Bearer ${token}` } })
             .then(data => {
                 data.data.forEach(fornecedor => {
                     dados = dados + `
@@ -144,7 +145,7 @@
     document.getElementById('loading').style.display = "none";
     async function removerFornecedor(id) {
         document.getElementById('loading').style.display = "block";
-        await axios.delete(`/api/fornecedores/${id}`)
+        await axios.delete(`/api/fornecedores/${id}`, { headers: { authorization: `Bearer ${token}` } })
             .then(data => {
                 location.reload();
             })

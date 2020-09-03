@@ -124,6 +124,7 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
+    var token = localStorage.getItem('token');
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.sidenav');
         var instances = M.Sidenav.init(elems, null);
@@ -151,7 +152,7 @@
     }
 
     async function getProduto(id) {
-        axios.get(`/api/produto/${id}`)
+        axios.get(`/api/produto/${id}`, { headers: { authorization: `Bearer ${token}` } })
             .then(res => {
                 document.getElementById("produto").value = res.data.produto;
                 document.getElementById("valorVenda").value = res.data.valorVenda;
@@ -177,7 +178,7 @@
                 object[key] = value;
             });
         if (isEdicao()) {
-            await axios.put(`/api/produtos/${getId()}`, object)
+            await axios.put(`/api/produtos/${getId()}`, object, { headers: { authorization: `Bearer ${token}` } })
                 .then(data => {
                     window.location.href = '/produtos/listar'
                 })
@@ -186,7 +187,7 @@
                     document.getElementById('error').innerHTML = error.response.data.message
                 })
         } else {
-            await axios.post('/api/produtos', object)
+            await axios.post('/api/produtos', object, { headers: { authorization: `Bearer ${token}` } })
                 .then(data => {
                     window.location.href = '/produtos/listar'
                 })
