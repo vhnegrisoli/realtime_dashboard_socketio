@@ -60,15 +60,16 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
+    document.getElementById('loading').style.display = 'none';
     logout()
     function logout() {
         var token = localStorage.getItem('token')
         if (token) {
             localStorage.removeItem('token')
+            console.log(document.cookie)
+            document.cookie = "token=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
         }
     }
-
-    document.getElementById('loading').style.display = 'none';
 
     document.getElementById("button").addEventListener("click", function (event) {
         event.preventDefault()
@@ -87,6 +88,7 @@
             .then(data => {
                 console.log(data.data)
                 localStorage.setItem('token', data.data)
+                document.cookie = `token=${data.data}`
                 window.location.href = '/'
             })
             .catch(error => {

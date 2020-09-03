@@ -22,7 +22,7 @@
         <li>
             <div class="divider"></div>
         </li>
-        <li><a class="subheader">Venda</a></li>
+        <li><a class="subheader"><i class="material-icons">attach_money</i>Venda</a></li>
         <li><a href="/vendas/cadastrar" class="waves-effect"><i class="material-icons">add_shopping_cart</i>Nova
                 venda</a>
         </li>
@@ -47,13 +47,23 @@
         </li>
         <li><a class="subheader"><i class="material-icons">label</i>Categorias</a></li>
         <li><a href="/categorias/cadastrar" class="waves-effect"><i class="material-icons">add_box</i>Cadastrar</a></li>
-        <li><a href="/categorias/listar" class="waves-effect"><i
-                    class="material-icons">format_list_numbered</i>Listar</a>
+        <li>
+            <a href="/categorias/listar" class="waves-effect"><i class="material-icons">format_list_numbered</i>Listar
+            </a>
         </li>
         <li>
             <div class="divider"></div>
         </li>
         <li><a href="/reiniciar-dados" class="waves-effect"><i class="material-icons">replay</i>Reiniciar dados</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        </li>
+        <li><a href="/login" class="waves-effect"><i class="material-icons">login</i>Sair</a>
+        </li>
+        <li>
+            <div class="divider"></div>
         </li>
     </ul>
     <br />
@@ -145,6 +155,7 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script type=" text/javascript" src="public/js/materialize.min.js"></script>
 <script>
+    var token = localStorage.getItem('token')
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.sidenav');
         var instances = M.Sidenav.init(elems, null);

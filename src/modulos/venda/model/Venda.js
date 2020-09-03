@@ -13,7 +13,7 @@ const VendaSchema = new Schema({
   dataVenda: Date,
   situacao: String,
   aprovacao: String,
-  usuarioId: mongoose.ObjectId,
+  usuarioId: String,
 });
 
 module.exports = model('Venda', VendaSchema);

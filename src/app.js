@@ -2,6 +2,7 @@ import express from 'express';
 import http from 'http';
 import cors from 'cors';
 import handlebars from 'express-handlebars';
+import cookieParser from 'cookie-parser';
 
 import * as socketConfig from './config/socket/index';
 import * as db from './config/db/index';
@@ -26,6 +27,7 @@ app.use(cors());
 app.engine('handlebars', handlebars({ defaultLayout: false }));
 app.set('view engine', 'handlebars');
 app.use(express.static('.'));
+app.use(cookieParser());
 app.use(auth);
 app.use(usuarioPublicApi);
 

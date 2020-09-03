@@ -9,7 +9,7 @@ const ProdutoSchema = new Schema({
   fornecedorRazaoSocial: String,
   fornecedorCnpj: String,
   valorVenda: Number,
-  usuarioId: mongoose.ObjectId,
+  usuarioId: String,
 });
 
 module.exports = model('Produto', ProdutoSchema);

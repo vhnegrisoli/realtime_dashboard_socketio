@@ -6,7 +6,7 @@ const model = mongoose.model;
 const FornecedorSchema = new Schema({
   razaoSocial: String,
   cnpj: String,
-  usuarioId: mongoose.ObjectId,
+  usuarioId: String,
 });
 
 module.exports = model('Fornecedor', FornecedorSchema);
