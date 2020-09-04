@@ -19,7 +19,8 @@ class VendaController {
   }
 
   async iniciarFormulario(req, res) {
-    const produtos = await Produto.find();
+    const usuarioId = req.authUser.id;
+    const produtos = await Produto.find({ usuarioId });
     const produtosResponse = [];
     produtos.forEach((produto) => {
       produtosResponse.push({
