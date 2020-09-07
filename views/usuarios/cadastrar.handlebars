@@ -4,40 +4,34 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <link rel="stylesheet" type="text/css" href="/public/css/menu.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type=" text/javascript" src="/public/js/materialize.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 </head>
-<script src="/socket.io/socket.io.js"></script>
 
 <body>
-    <div class="container center-align">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Criar conta</a>
+        </div>
+    </nav>
+    <br />
+    <div class="container">
         <div class="row">
-            <div class="col s12">
-                <img class="responsive-img" width="853" height="480" src="/public/img/Real time dash logo.png">
-            </div>
             <div class="col s12">
                 <div class="card col s12">
                     <form class="col s12">
                         <div class="row">
                             <div class="input-field col s12">
-                                <input placeholder="Email" id="email" name="email" required type="text"
+                                <input placeholder="Descrição" id="descricao" name="descricao" required type="text"
                                     class="validate">
-                                <label for="email">Email</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input placeholder="Senha" id="senha" name="senha" required type="password"
-                                    class="validate">
-                                <label for="senha">Senha</label>
+                                <label for="first_name">Descrição</label>
                             </div>
                         </div>
                         <div class="row col s12">
                             <button class="btn waves-effect waves-light" id="button" type="submit" onclick="save()"
-                                name="action">Entrar</button>
+                                name="action">Salvar</button>
                             <div id="loading" class="preloader-wrapper big active">
                                 <div class="spinner-layer spinner-blue-only">
                                     <div class="circle-clipper left">
@@ -52,34 +46,25 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row col s12">
-                            <p><a href="/usuarios/cadastrar">Não possui conta? Cadastre-se!</a></p>
-                        </div>
                     </form>
-                    <h6 style="color:green" id="success" />
-                    <h6 style="color:red" id="error" />
                 </div>
+                <h6 style="color:green" id="success" />
+                <h6 style="color:red" id="error" />
             </div>
         </div>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="/socket.io/socket.io.js"></script>
 <script>
-    document.getElementById('loading').style.display = 'none';
-    logout()
-    function logout() {
-        var token = localStorage.getItem('token')
-        if (token) {
-            localStorage.removeItem('token')
-            console.log(document.cookie)
-            document.cookie = "token=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-        }
+    document.getElementById('loading').style.display = "none";
+    function isEdicao() {
+        var url = window.location.pathname.split('cadastrar/')[1]
+        return url !== null && url !== undefined;
     }
 
     document.getElementById("button").addEventListener("click", function (event) {
         event.preventDefault()
     });
-
     async function save() {
         document.getElementById('button').style.display = "none";
         document.getElementById('loading').style.display = "block";
@@ -88,25 +73,18 @@
             .forEach(function (value, key) {
                 object[key] = value;
             });
-        console.log(object)
-        await axios.post('/auth/token', object)
+
+        await axios.post('/api/usuarios', object)
             .then(data => {
-                console.log(data.data)
-                localStorage.setItem('token', data.data)
-                document.cookie = `token=${data.data}`
-                window.location.href = '/'
+                window.location.href = '/login'
             })
             .catch(error => {
                 document.getElementById('success').innerHTML = ''
-                document.getElementById('error').innerHTML = 'Usuário ou senha inválidos.'
+                document.getElementById('error').innerHTML = error.response.data.message
             })
-
         document.getElementById('loading').style.display = "none";
         document.getElementById('button').style.display = "block";
     }
-
 </script>
-<script type=" text/javascript" src="/public/js/materialize.min.js"></script>
-</body>
 
 </html>

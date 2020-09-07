@@ -5,7 +5,7 @@
   "author": "Victor Hugo Negrisoli",
   "license": "MIT",
   "scripts": {
-    "startLocal": "export NODE_ENV=dev&& nodemon src/app.js",
+    "startLocal": "set NODE_ENV=dev&& nodemon src/app.js",
     "startContainer": "nodemon src/app.js",
     "start": "set NODE_ENV=prod&& sucrase-node src/app.js",
     "heroku-prebuild": "rm -rf node_modules && rm -rf yarn.lock && yarn"
