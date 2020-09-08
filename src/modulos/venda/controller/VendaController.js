@@ -1,5 +1,3 @@
-import * as io from '../../../config/socket/index';
-
 import Venda from '../model/Venda';
 import Produto from '../../produto/model/Produto';
 import DashboardController from '../../dashboard/controller/dashboardController';

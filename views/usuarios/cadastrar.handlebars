@@ -23,15 +23,45 @@
                 <div class="card col s12">
                     <form class="col s12">
                         <div class="row">
-                            <div class="input-field col s12">
-                                <input placeholder="Descrição" id="descricao" name="descricao" required type="text"
+                            <div class="input-field col s6">
+                                <input placeholder="Nome" id="nome" name="nome" required type="text" class="validate">
+                                <label for="nome">Nome</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input placeholder="Email" id="email" name="email" required type="email"
                                     class="validate">
-                                <label for="first_name">Descrição</label>
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input placeholder="Senha" id="senha" name="senha" required type="password"
+                                    class="validate">
+                                <label for="senha">Senha</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input placeholder="Confirmar senha" id="confirmarSenha" name="confirmarSenha" required
+                                    type="password" class="validate">
+                                <label for="confirmarSenha">Confirmar senha</label>
                             </div>
                         </div>
                         <div class="row col s12">
-                            <button class="btn waves-effect waves-light" id="button" type="submit" onclick="save()"
-                                name="action">Salvar</button>
+                            <div class="col s6">
+                                <button class="btn waves-effect waves-light" id="button" type="submit" onclick="save()"
+                                    name="action">Salvar</button>
+                            </div>
+                            <div class="col s6">
+                                <p>Permissão:
+                                    <label>
+                                        <input name="permissao" id="permissao" value="ADMIN" type="radio" />
+                                        <span>Admin</span>
+                                    </label>
+                                    <label>
+                                        <input name="permissao" id="permissao" value="USER" type="radio" />
+                                        <span>User</span>
+                                    </label>
+                                </p>
+                            </div>
                             <div id="loading" class="preloader-wrapper big active">
                                 <div class="spinner-layer spinner-blue-only">
                                     <div class="circle-clipper left">
