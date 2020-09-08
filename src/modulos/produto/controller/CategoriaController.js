@@ -76,10 +76,9 @@ class CategoriaController {
     const categoriaDescricao = await Categoria.findOne({ descricao, usuarioId });
     const categoria = await Categoria.findById(id);
     if (
-      !categoriaDescricao ||
-      (categoriaDescricao &&
-        descricao === categoriaDescricao.descricao &&
-        String(id) !== String(categoriaDescricao._id))
+      categoriaDescricao &&
+      descricao === categoriaDescricao.descricao &&
+      String(id) !== String(categoriaDescricao._id)
     ) {
       return res.status(400).json({ message: 'Esta categoria já está cadastrada.' });
     }
