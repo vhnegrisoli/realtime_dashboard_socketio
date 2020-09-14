@@ -330,7 +330,7 @@
                 })
         }
 
-        socket.on('dados', function (value) {
+        socket.on(`token:${token}`, function (value) {
             var vendasMensais = value.vendasMensais
             dadosChart1.labels = Object.values(vendasMensais).map(item => item._id)
             dadosChart1.datasets[0].data = Object.values(vendasMensais).map(item => item.value)

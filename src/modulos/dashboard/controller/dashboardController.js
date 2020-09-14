@@ -1,13 +1,12 @@
-import * as io from './../../../config/socket/index';
+import * as io from "./../../../config/socket/index";
 
-import fs from 'fs';
-import Categoria from '../../produto/model/Categoria';
-import Fornecedor from '../../produto/model/Fornecedor';
-import Produto from '../../produto/model/Produto';
-import Venda from '../../venda/model/Venda';
-import Usuario from '../../usuario/model/Usuario';
-import * as util from '../util/util';
-import mongoose from 'mongoose';
+import fs from "fs";
+import Categoria from "../../produto/model/Categoria";
+import Fornecedor from "../../produto/model/Fornecedor";
+import Produto from "../../produto/model/Produto";
+import Venda from "../../venda/model/Venda";
+import Usuario from "../../usuario/model/Usuario";
+import * as util from "../util/util";
 
 class DashboardController {
   async reiniciarDados(req, res) {
@@ -15,15 +14,17 @@ class DashboardController {
     const dados = controller.recuperarArquivoJson(res);
     await controller.removerCollectionsSeExistirem();
     await controller.inserirDadosIniciaisNasCollections(dados);
-    return res.redirect('login');
+    return res.redirect("login");
   }
 
   recuperarArquivoJson(res) {
     try {
-      return JSON.parse(fs.readFileSync('dados_iniciais.json'));
+      return JSON.parse(fs.readFileSync("dados_iniciais.json"));
     } catch (error) {
       console.log(error);
-      return res.status(400).json({ message: 'Houve um erro ao processar o arquivo.' });
+      return res
+        .status(400)
+        .json({ message: "Houve um erro ao processar o arquivo." });
     }
   }
 
@@ -48,15 +49,22 @@ class DashboardController {
   async inserirDadosIniciaisNasCollections(dados) {
     const { vendas, produtos, categorias, fornecedores } = dados;
     if (!vendas || !produtos || !categorias || !fornecedores) {
-      return res.status(400).json({ message: 'É necessário informar todos os Models' });
+      return res
+        .status(400)
+        .json({ message: "É necessário informar todos os Models" });
     }
     const usuario = await Usuario.create({
-      nome: 'Victor Hugo Negrisoli',
-      email: 'victorhugonegrisoli.ccs@gmail.com',
-      senha: '123456',
-      permissoes: ['ADMIN'],
+      nome: "Usuário 1",
+      email: "usuario@gmail.com",
+      senha: "123456",
+      permissoes: ["ADMIN"],
     });
-    console.log(usuario);
+    await Usuario.create({
+      nome: "Usuário 2",
+      email: "usuario2@gmail.com",
+      senha: "123456",
+      permissoes: ["ADMIN"],
+    });
     categorias.forEach((categoria) => {
       categoria.usuarioId = usuario.id;
     });
@@ -84,19 +92,19 @@ class DashboardController {
 
   async buscarIndicadoresDosCards(usuarioId) {
     const vendasFinalizadas = await Venda.countDocuments({
-      situacao: 'FECHADA',
+      situacao: "FECHADA",
       usuarioId,
     });
     const vendasAbertas = await Venda.countDocuments({
-      situacao: 'ABERTA',
+      situacao: "ABERTA",
       usuarioId,
     });
     const vendasAprovadas = await Venda.countDocuments({
-      aprovacao: 'APROVADA',
+      aprovacao: "APROVADA",
       usuarioId,
     });
     const vendasRejeitadas = await Venda.countDocuments({
-      aprovacao: 'REJEITADA',
+      aprovacao: "REJEITADA",
       usuarioId,
     });
     return {
@@ -114,13 +122,23 @@ class DashboardController {
     return res.json({
       vendasMensais: await controller.buscarIndicadorVendasMensais(usuarioId),
       vendasMensaisPorValorVenda: await controller.buscarIndicadorVendasMensaisPorValorVenda(
-        usuarioId,
+        usuarioId
       ),
-      vendasPorProdutos: await controller.buscarIndicadorVendasPorProdutos(usuarioId),
-      vendasPorFornecedores: await controller.buscarIndicadorVendasPorFornecedores(usuarioId),
-      vendasPorCategorias: await controller.buscarIndicadorVendasPorCategorias(usuarioId),
-      vendasPorSituacoes: await controller.buscarIndicadorVendasPorSituacoes(usuarioId),
-      vendasPorAprovacoes: await controller.buscarIndicadorVendasPorAprovacoes(usuarioId),
+      vendasPorProdutos: await controller.buscarIndicadorVendasPorProdutos(
+        usuarioId
+      ),
+      vendasPorFornecedores: await controller.buscarIndicadorVendasPorFornecedores(
+        usuarioId
+      ),
+      vendasPorCategorias: await controller.buscarIndicadorVendasPorCategorias(
+        usuarioId
+      ),
+      vendasPorSituacoes: await controller.buscarIndicadorVendasPorSituacoes(
+        usuarioId
+      ),
+      vendasPorAprovacoes: await controller.buscarIndicadorVendasPorAprovacoes(
+        usuarioId
+      ),
     });
   }
 
@@ -134,7 +152,7 @@ class DashboardController {
       {
         $group: {
           _id: {
-            $substr: ['$dataVenda', 5, 2],
+            $substr: ["$dataVenda", 5, 2],
           },
           value: {
             $sum: 1,
@@ -161,9 +179,9 @@ class DashboardController {
       {
         $group: {
           _id: {
-            $substr: ['$dataVenda', 5, 2],
+            $substr: ["$dataVenda", 5, 2],
           },
-          value: { $sum: '$valorVenda' },
+          value: { $sum: "$valorVenda" },
         },
       },
       {
@@ -186,7 +204,7 @@ class DashboardController {
       },
       {
         $group: {
-          _id: '$produto',
+          _id: "$produto",
           value: {
             $sum: 1,
           },
@@ -210,7 +228,7 @@ class DashboardController {
       },
       {
         $group: {
-          _id: '$fornecedorRazaoSocial',
+          _id: "$fornecedorRazaoSocial",
           value: {
             $sum: 1,
           },
@@ -234,7 +252,7 @@ class DashboardController {
       },
       {
         $group: {
-          _id: '$categoria',
+          _id: "$categoria",
           value: {
             $sum: 1,
           },
@@ -258,7 +276,7 @@ class DashboardController {
       },
       {
         $group: {
-          _id: '$situacao',
+          _id: "$situacao",
           value: {
             $sum: 1,
           },
@@ -282,7 +300,7 @@ class DashboardController {
       },
       {
         $group: {
-          _id: '$aprovacao',
+          _id: "$aprovacao",
           value: {
             $sum: 1,
           },
@@ -298,29 +316,40 @@ class DashboardController {
   }
 
   async redirecionarParaDashboard(req, res) {
-    return res.redirect('/dashboard');
+    return res.redirect("/dashboard");
   }
 
   async iniciarDashboard(req, res) {
-    return res.render('dashboard');
+    return res.render("dashboard");
   }
 
-  async atualizarDados(usuarioId) {
+  async atualizarDados(usuarioId, token) {
     const controller = new DashboardController();
     let values = {
       vendasMensais: await controller.buscarIndicadorVendasMensais(usuarioId),
       vendasMensaisPorValorVenda: await controller.buscarIndicadorVendasMensaisPorValorVenda(
-        usuarioId,
+        usuarioId
       ),
-      vendasPorProdutos: await controller.buscarIndicadorVendasPorProdutos(usuarioId),
-      vendasPorFornecedores: await controller.buscarIndicadorVendasPorFornecedores(usuarioId),
-      vendasPorCategorias: await controller.buscarIndicadorVendasPorCategorias(usuarioId),
-      vendasPorSituacoes: await controller.buscarIndicadorVendasPorSituacoes(usuarioId),
-      vendasPorAprovacoes: await controller.buscarIndicadorVendasPorAprovacoes(usuarioId),
+      vendasPorProdutos: await controller.buscarIndicadorVendasPorProdutos(
+        usuarioId
+      ),
+      vendasPorFornecedores: await controller.buscarIndicadorVendasPorFornecedores(
+        usuarioId
+      ),
+      vendasPorCategorias: await controller.buscarIndicadorVendasPorCategorias(
+        usuarioId
+      ),
+      vendasPorSituacoes: await controller.buscarIndicadorVendasPorSituacoes(
+        usuarioId
+      ),
+      vendasPorAprovacoes: await controller.buscarIndicadorVendasPorAprovacoes(
+        usuarioId
+      ),
       cards: await controller.buscarIndicadoresDosCards(usuarioId),
     };
+
     const socketIO = io.getSocket();
-    socketIO.emit('dados', values);
+    socketIO.emit(`token:${token}`, values);
   }
 }
 export default new DashboardController();

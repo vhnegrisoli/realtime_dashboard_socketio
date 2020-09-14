@@ -1,6 +1,6 @@
-import Venda from '../model/Venda';
-import Produto from '../../produto/model/Produto';
-import DashboardController from '../../dashboard/controller/dashboardController';
+import Venda from "../model/Venda";
+import Produto from "../../produto/model/Produto";
+import DashboardController from "../../dashboard/controller/dashboardController";
 
 class VendaController {
   async buscarTodas(req, res) {
@@ -12,7 +12,7 @@ class VendaController {
     await Venda.insertMany(req.body.vendas);
     const qtdVendas = Venda.find().count();
     return res.json({
-      message: 'Foram inseridas ' + qtdVendas + ' vendas com sucesso!',
+      message: "Foram inseridas " + qtdVendas + " vendas com sucesso!",
     });
   }
 
@@ -26,10 +26,10 @@ class VendaController {
         produto: `${produto.produto} - R$${produto.valorVenda}`,
       });
     });
-    res.render('vendas/cadastrar', {
+    res.render("vendas/cadastrar", {
       produtos: produtosResponse,
-      aprovacoes: ['APROVADA', 'REJEITADA', 'AGUARDANDO_APROVACAO'],
-      situacoes: ['FECHADA', 'ABERTA'],
+      aprovacoes: ["APROVADA", "REJEITADA", "AGUARDANDO_APROVACAO"],
+      situacoes: ["FECHADA", "ABERTA"],
     });
   }
 
@@ -41,7 +41,7 @@ class VendaController {
     const { produtoId, data, situacao, aprovacao, quantidade } = req.body;
     const produtoExistente = await Produto.findById(produtoId);
     if (!produtoExistente) {
-      return res.status(400).json({ message: 'O produto não foi encontrado.' });
+      return res.status(400).json({ message: "O produto não foi encontrado." });
     }
     const {
       produto,
@@ -64,11 +64,13 @@ class VendaController {
         aprovacao,
         usuarioId,
       });
-      await DashboardController.atualizarDados(usuarioId);
+      await DashboardController.atualizarDados(usuarioId, req.cookies.token);
       return res.json(vendaSalva);
     } catch (error) {
       console.log(error);
-      return res.status(400).json({ message: 'Houve um erro ao salvar a venda.' });
+      return res
+        .status(400)
+        .json({ message: "Houve um erro ao salvar a venda." });
     }
   }
 
@@ -80,10 +82,14 @@ class VendaController {
       !dados.aprovacao ||
       !dados.quantidade
     ) {
-      return res.status(400).json({ message: 'Por favor, preencha todos os campos.' });
+      return res
+        .status(400)
+        .json({ message: "Por favor, preencha todos os campos." });
     }
     if (dados.quantidade <= 0) {
-      return res.status(400).json({ message: 'A quantidade não pode ser menor ou igual a 0.' });
+      return res
+        .status(400)
+        .json({ message: "A quantidade não pode ser menor ou igual a 0." });
     }
   }
 }
