@@ -323,7 +323,7 @@ class DashboardController {
     return res.render("dashboard");
   }
 
-  async atualizarDados(usuarioId, token) {
+  async atualizarDados(usuarioId) {
     const controller = new DashboardController();
     let values = {
       vendasMensais: await controller.buscarIndicadorVendasMensais(usuarioId),
@@ -348,8 +348,10 @@ class DashboardController {
       cards: await controller.buscarIndicadoresDosCards(usuarioId),
     };
 
+    let userSocketEmit = `userId:${usuarioId}`;
+    console.log(`Emitindo para: ${userSocketEmit}`);
     const socketIO = io.getSocket();
-    socketIO.emit(`token:${token}`, values);
+    socketIO.emit(userSocketEmit, values);
   }
 }
 export default new DashboardController();

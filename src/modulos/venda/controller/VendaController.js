@@ -64,7 +64,7 @@ class VendaController {
         aprovacao,
         usuarioId,
       });
-      await DashboardController.atualizarDados(usuarioId, req.cookies.token);
+      await DashboardController.atualizarDados(usuarioId);
       return res.json(vendaSalva);
     } catch (error) {
       console.log(error);

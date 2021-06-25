@@ -180,6 +180,8 @@
     <script>
 
         var token = localStorage.getItem('token');
+        var userId = localStorage.getItem('userId');
+        console.log(`User id: ${userId}`);
 
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.sidenav');
@@ -330,7 +332,9 @@
                 })
         }
 
-        socket.on(`token:${token}`, function (value) {
+        let userSocketEmit = `userId:${userId}`;
+        console.log(`Emitindo para: ${userSocketEmit}`);
+        socket.on(userSocketEmit, function (value) {
             var vendasMensais = value.vendasMensais
             dadosChart1.labels = Object.values(vendasMensais).map(item => item._id)
             dadosChart1.datasets[0].data = Object.values(vendasMensais).map(item => item.value)

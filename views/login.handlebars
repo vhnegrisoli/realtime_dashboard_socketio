@@ -71,7 +71,6 @@
         var token = localStorage.getItem('token')
         if (token) {
             localStorage.removeItem('token')
-            console.log(document.cookie)
             document.cookie = "token=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
         }
     }
@@ -88,12 +87,11 @@
             .forEach(function (value, key) {
                 object[key] = value;
             });
-        console.log(object)
         await axios.post('/auth/token', object)
             .then(data => {
-                console.log(data.data)
-                localStorage.setItem('token', data.data)
-                document.cookie = `token=${data.data}`
+                localStorage.setItem('token', data.data.accessToken)
+                localStorage.setItem('userId', data.data.userId)
+                document.cookie = `token=${data.data.accessToken}`
                 window.location.href = '/'
             })
             .catch(error => {
